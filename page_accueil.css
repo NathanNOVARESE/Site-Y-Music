@@ -1,0 +1,222 @@
+.page-d-accueil {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .page-d-accueil .overlap-wrapper {
+    background-color: #ffffff;
+    overflow: hidden;
+    width: 1920px;
+    height: 1080px;
+  }
+  
+  .page-d-accueil .overlap {
+    position: relative;
+    width: 1922px;
+    height: 1080px;
+  }
+  
+  .page-d-accueil .image-fond {
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+  
+  .page-d-accueil .rectangle-accueil {
+    width: 1920px;
+    height: 167px;
+    top: 0;
+    background: linear-gradient(
+      90deg,
+      rgb(255, 11.26, 230.63) 7.44%,
+      rgb(162.56, 108.46, 195.71) 52.6%,
+      rgb(0.21, 209.14, 255) 100%
+    );
+    position: absolute;
+    left: 0;
+  }
+  
+  .page-d-accueil .groupe-actualits {
+    position: absolute;
+    width: 812px;
+    height: 913px;
+    top: 167px;
+    left: 1110px;
+  }
+  
+  .page-d-accueil .overlap-group {
+    position: relative;
+    width: 810px;
+    height: 913px;
+    background-color: #d9d9d9;
+    border: 1px solid;
+    border-color: #000000;
+  }
+  
+  .page-d-accueil .text-wrapper {
+    position: absolute;
+    width: 278px;
+    top: 10px;
+    left: -1px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 55px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .page-d-accueil .menu-hamburger {
+    position: absolute;
+    width: 401px;
+    height: 1080px;
+    top: 0;
+    left: 0;
+  }
+  
+  .page-d-accueil .div {
+    position: relative;
+    width: 393px;
+    height: 1080px;
+    background: linear-gradient(180deg, rgb(255, 11, 231) 22.3%, rgb(0, 193.8, 255) 100%);
+  }
+  
+  .page-d-accueil .fond-noir {
+    position: absolute;
+    width: 393px;
+    height: 1080px;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    opacity: 0.3;
+  }
+  
+  .page-d-accueil .xxxxxx-xxxxxx-xxxxxx {
+    position: absolute;
+    top: 495px;
+    left: 80px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 35px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .page-d-accueil .text-wrapper-2 {
+    position: absolute;
+    top: 452px;
+    left: 17px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 40px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .page-d-accueil .span-wrapper {
+    position: absolute;
+    top: 247px;
+    left: 73px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 35px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .page-d-accueil .span {
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 35px;
+    letter-spacing: 0;
+  }
+  
+  .page-d-accueil .text-wrapper-3 {
+    position: absolute;
+    top: 199px;
+    left: 22px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 40px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .page-d-accueil .menu-hamburger-2 {
+    position: absolute;
+    width: 76px;
+    height: 63px;
+    top: 52px;
+    left: 43px;
+    transform: rotate(-90deg);
+  }
+  
+  .page-d-accueil .rectangle {
+    width: 76px;
+    height: 15px;
+    top: 23px;
+    background-color: #000000;
+    position: absolute;
+    left: 0;
+  }
+  
+  .page-d-accueil .rectangle-2 {
+    width: 76px;
+    height: 15px;
+    top: 48px;
+    background-color: #000000;
+    position: absolute;
+    left: 0;
+  }
+  
+  .page-d-accueil .rectangle-3 {
+    width: 76px;
+    height: 15px;
+    top: 0;
+    background-color: #1e1e1e;
+    position: absolute;
+    left: 0;
+  }
+  
+  .page-d-accueil .search-bar {
+    position: absolute;
+    width: 363px;
+    height: 27px;
+    top: 65px;
+    left: 1426px;
+  }
+  
+  .page-d-accueil .continuit-ombre {
+    position: absolute;
+    width: 295px;
+    height: 167px;
+    top: 0;
+    left: 393px;
+    transform: rotate(-180deg);
+    background: linear-gradient(-90deg, rgba(0, 0, 0, 0.29) 0%, rgba(217, 217, 217, 0) 100%);
+  }
+
+  .page-d-accueil .ligne-noir-sparation {
+    position: absolute;
+    width: 1920px;
+    height: 5px;
+    top: 164px;
+    left: 0;
+    background-color: #000000;
+    filter: blur(4px);
+  }
+  
