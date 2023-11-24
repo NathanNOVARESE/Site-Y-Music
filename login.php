@@ -71,7 +71,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <div class="divider-line"></div>
                 </div>
                 <div class="button_inscription">
-                    <button type="button" onclick="window.location.href='signup.php'">Sign Up</button>
+                    <button type="button" onclick="window.location.href='sign.php'">Sign Up</button>
 
                 </div>
             </div>
