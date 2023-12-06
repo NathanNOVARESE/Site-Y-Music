@@ -48,11 +48,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-<div class="header">
+<div class="container">
     <div class="image">
             <img src="logo.png" alt="logo" class="logo">
-        </div>
-
+    </div>
     <div class="form">
         <form method="POST" action="">
             <div class="form_input">
