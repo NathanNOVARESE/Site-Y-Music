@@ -32,16 +32,17 @@
             <br />
             <div class="button">
                     <button  type="submit" name="submit">Sign In</button>
-                </div>
-                <div class="divider">
+            </div>
+            <div class="divider">
                     <div class="divider-line"></div>
                     <p class="p">ou</p>
                     <div class="divider-line"></div>
-                </div>
+            </div>
                 <div class="button_inscription">
                     <button type="button" onclick="window.location.href='login.php'">Log In</button>
-                </div>
-    </div>
+            </div>
+            
+            </div>
         </div>
     </div>        
     </form>

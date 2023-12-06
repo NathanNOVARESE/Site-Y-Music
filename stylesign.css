@@ -119,3 +119,15 @@ button:hover{
     color: #000000;
     border: 1px solid #000000;
 }
+
+
+.motdepass{
+    margin-top: 0;
+    font-size: 20px; /* Taille fixe de la police */
+    font-weight: 400;
+    height: 50px; /* Taille fixe des éléments de paragraphe */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+}

@@ -115,7 +115,26 @@ html,body {
 }
 
 button:hover{
-    background-color: rgb(238, 158, 234);
+    background-color: rgb(34, 33, 36);
     color: #000000;
     border: 1px solid #000000;
+}
+
+.motdepasse a{
+    color:#000000;
+    
+}
+
+.motdepasse {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 400;
+    height: 50px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.motdepasse a:hover{
+    color: rgb(34, 33, 36)
 }

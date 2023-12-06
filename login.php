@@ -73,6 +73,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <button type="button" onclick="window.location.href='sign.php'">Sign Up</button>
 
                 </div>
+                <div class="motdepasse">
+                    <a href="forgot.php">Mot de passe oublié ?</a>
+                </div>
             </div>
         </form>
     </div>
