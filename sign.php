@@ -10,8 +10,10 @@
 </head>
 
 <body>
-    <div id="messageDiv" style="display: none;"></div> 
-    <form method="POST" action="traitement.php">
+    <div class="form">
+        <div class="form_input">
+        <div id="messageDiv" style="display: none;"></div> 
+        <form method="POST" action="traitement.php">
         <label for"firstname">Votre Prénom</label>
         <input type="text" name="firstname" placeholder="First Name" required>
             <br />
@@ -31,7 +33,21 @@
             <input type="password" name="confpassword" placeholder="Confirm Password" required>
             <br />
             <input type="submit" name="submit" value="Envoyer">
+        </div>
+    </div>        
     </form>
+    <div class="button">
+                    <button  type="submit" name="submit">Log In</button>
+                </div>
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <p class="p">ou</p>
+                    <div class="divider-line"></div>
+                </div>
+                <div class="button_inscription">
+                    <button type="button" onclick="window.location.href='sign.php'">Sign Up</button>
+
+                </div>
     <script>
         // Vérifiez s'il y a un message à afficher dans l'URL (peut être une redirection depuis traitement.php)
         const urlParams = new URLSearchParams(window.location.search);
