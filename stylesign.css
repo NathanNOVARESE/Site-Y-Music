@@ -23,7 +23,7 @@ html,body {
 
 .image {
     margin-right: 3rem; /* Marge à gauche */
-    margin-left: 10rem; /* Marge à droite */
+    margin-left: 20rem; /* Marge à droite */
 }
 
 .image img {
@@ -38,7 +38,7 @@ html,body {
     position: relative;
     background-color: #ffffff;
     border-radius: 15px;
-    height: 400px; /* Taille fixe du formulaire */
+    height: 500px; /* Taille fixe du formulaire */
     width: 350px; /* Taille fixe du formulaire */
     overflow: hidden;
     flex-grow: 1;
@@ -54,7 +54,7 @@ html,body {
 .form_input label,
 .form_input input {
     width: 80%;
-    height: auto; /* Taille fixe des éléments de formulaire */
+    height: 30px; /* Taille fixe des éléments de formulaire */
     margin-bottom: 10px;
 }
 
@@ -71,8 +71,8 @@ html,body {
 
 .button button,
 .button_inscription button {
-    width: 80%;
-    height: auto; /* Taille fixe des boutons */
+    width: 90%;
+    height: 60px; /* Taille fixe des boutons */
     border: none;
     border-radius: 5px;
     background-color: #000000;

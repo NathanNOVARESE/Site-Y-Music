@@ -9,7 +9,7 @@ body{
 }
 
 header .nav {
-  background-color: rgb(174, 174, 174);
+  background-color: #FFFFFF;
   padding: 0.5rem 2rem;
   display: flex;
   align-items: center;
@@ -20,14 +20,14 @@ header .nav {
 
 header .nav .logo{
   font-size: 1.5rem;
-  color: orange;
+  color: #CDC5EB;
 }
 
 header .nav .nav-list{
   display: flex;
   align-items: center;
   gap: 2.2rem;
-  color: rgb(224, 133, 22); 
+  color: #8975D1; 
   list-style: none;
   text-align: center;
   padding: 0.4rem;
@@ -55,15 +55,15 @@ header .nav .nav-list a{
 }
 
 header .nav .nav-list a:hover{
-  color: orange;
+  color: #CDC5EB;
 }
 
 header .nav .nav-list .rect{
-  border: 2px solid orange;
+  border: 2px solid #8975D1;
   border-radius: 0.5rem;
   padding: 0.6rem;
   cursor: pointer;
-  color: orange;
+  color: #CDC5EB;
   transition: 0.3s;
 }
 
@@ -73,7 +73,7 @@ header .nav .nav-list .rect:hover{
 
 header .nav .btn{
   background: transparent;
-  border: 2px solid orange;
+  border: 2px solid #8975D1;
   border-radius: 0.5rem;
   cursor: pointer;
   display: none;
@@ -121,7 +121,7 @@ header .nav .search-box:hover > .search-btn{
 }
 
 header .nav .search-btn{
-  color: orange;
+  color: #CDC5EB;
   float: right;
   width: 1.5rem;
   height: 1.5rem;

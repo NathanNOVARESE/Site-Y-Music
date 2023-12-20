@@ -39,7 +39,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Utilisateur trouvé, connecté avec succès
             $_SESSION['username'] = $username;
             $signupMessage = "Vous êtes connecté !";
-            header('Location: index.php'); // Redirection vers la page d'accueil si l'utilisateur est connecté
+            header('Location: page_accueil.php'); // Redirection vers la page d'accueil si l'utilisateur est connecté
             exit();
         } else {
             $error_message = "Username ou mot de passe incorrect !";

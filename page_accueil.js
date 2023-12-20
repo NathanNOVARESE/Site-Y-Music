@@ -20,4 +20,3 @@ btn.addEventListener("click", () => {
     }
     open = !open
 });
-

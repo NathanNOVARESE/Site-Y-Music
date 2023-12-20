@@ -1,3 +1,12 @@
+<?php
+  // Initialiser la session
+  session_start();
+  // Vérifiez si l'utilisateur est connecté, sinon redirigez-le vers la page de connexion
+  if(!isset($_SESSION["username"])){
+    header("Location: login.php");
+    exit(); 
+  }
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -22,14 +31,13 @@
           </a>
         </div>
           <ul class="nav-list">
-            <li class="item"><a href="/">Home</a></li>
+            <li class="item"><a href="setting_user.php">Setting</a></li>
             <li class="item"><a href="Festival1">Fest1</a></li>
             <li class="item"><a href="Festival2">Fest2</a></li>
             <li class="item"><a href="Festival3">Fest3</a></li>
-            <li class="item rect" ><a href="Login">Login</a></li>
           </ul>
           <button class="btn" id="btn">
-            <svg fill="orange" class="hamburger" viewBox="0 0 100 100" width="45">
+            <svg fill="#8975D1" class="hamburger" viewBox="0 0 100 100" width="45">
               <rect class="row top" width="80" height="10" x="10" y="30" rx="5"></rect>
               <rect class="row mid" width="80" height="10" x="10" y="50" rx="5"></rect>
               <rect class="row bot" width="80" height="10" x="10" y="70" rx="5"></rect>
