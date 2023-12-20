@@ -7,7 +7,8 @@ $dbname = "utilisateur";
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Configure un attribut PDO
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
     if(isset($_POST['submit'])) {
         $firstname = $_POST['firstname'];
         $lastname = $_POST['lastname'];
@@ -15,51 +16,62 @@ try {
         $email = $_POST['email'];
         $password = $_POST['password'];
         $confpassword = $_POST['confpassword'];
+        $profile_picture = $_FILES['profile_picture']['tmp_name'];
+        $format = $_POST['format'];   
+
+        // Si aucune image n'est téléchargée, utiliser l'image par défaut
+        if (empty($profile_picture)) {
+            $defaultImagePath = 'profile.png';
+            $imgContent = file_get_contents($defaultImagePath);
+            $format = pathinfo($defaultImagePath, PATHINFO_EXTENSION);
+        } else {
+            // Récupération du contenu de l'image téléchargée
+            $imgContent = file_get_contents($profile_picture);
+            $format = pathinfo($profile_picture, PATHINFO_EXTENSION);
+        }
+
+        // Encodage de l'image en base64
+        $imgBase64 = base64_encode($imgContent);
 
         // Vérification de la correspondance des mots de passe
         if ($password != $confpassword) {
             $signupMessage = "Les mots de passe ne correspondent pas.";
+        } elseif (strlen($password) < 8) {
+            $signupMessage = "Le mot de passe doit contenir au moins 8 caractères.";
         } else {
-            // Vérification de la longueur du mot de passe
-            if (strlen($password) < 8) {
-                $signupMessage = "Le mot de passe doit contenir au moins 8 caractères.";
+            // Vérification de l'unicité de l'email
+            $queryEmail = $conn->prepare("SELECT COUNT(*) AS count FROM users WHERE email = :email");
+            $queryEmail->execute(array('email' => $email));
+            $resultEmail = $queryEmail->fetch(PDO::FETCH_ASSOC);
+
+            if ($resultEmail['count'] > 0) {
+                $signupMessage = "L'email est déjà utilisé.";
             } else {
                 // Hachage du mot de passe
                 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-                // Vérification de l'unicité de l'email
-                $queryEmail = $conn->prepare("SELECT COUNT(*) AS count FROM users WHERE email = :email");
-                $queryEmail->execute(array('email' => $email));
-                $resultEmail = $queryEmail->fetch(PDO::FETCH_ASSOC);
+                // Insertion de l'utilisateur dans la base de données avec la photo de profil
+                $query = $conn->prepare("INSERT INTO users (firstname, lastname, username, email, password, profile_picture,format) VALUES (:firstname, :lastname, :username, :email, :password, :profile_picture, :format)");
+                $query->bindParam(':firstname', $firstname);
+                $query->bindParam(':lastname', $lastname);
+                $query->bindParam(':username', $username);
+                $query->bindParam(':email', $email);
+                $query->bindParam(':password', $hashedPassword);
+                $query->bindParam(':profile_picture', $imgBase64);
+                $query->bindParam(':format', $format);
+                $query->execute();
 
-                if ($resultEmail['count'] > 0) {
-                    $signupMessage = "L'email est déjà utilisé.";
-                }
-
-                // Vérification de l'unicité du pseudo
-                $queryUsername = $conn->prepare("SELECT COUNT(*) AS count FROM users WHERE username = :username");
-                $queryUsername->execute(array('username' => $username));
-                $resultUsername = $queryUsername->fetch(PDO::FETCH_ASSOC);
-
-                if ($resultUsername['count'] > 0) {
-                    $signupMessage = "Le pseudo est déjà utilisé.";
-                }else {
-                    // Email et pseudo sont valides, on peut enregistrer l'utilisateur
-                    $query = $conn->prepare("INSERT INTO users (firstname, lastname, username, email, password) VALUES (:firstname, :lastname, :username, :email, :password)");
-                    $query->bindParam(':firstname', $firstname);
-                    $query->bindParam(':lastname', $lastname);
-                    $query->bindParam(':username', $username);
-                    $query->bindParam(':email', $email);
-                    $query->bindParam(':password', $hashedPassword);
-                    $query->execute();
-                    $signupMessage = "Votre compte a bien été créé.";
-                }
+                // Redirection vers la page d'accueil avec un message de succès
+                header("Location: page_accueil.php?message=" . urlencode("Votre compte a bien été créé."));
+                exit();
             }
         }
     }
 } catch(PDOException $e) {  
     $signupMessage = "Connection failed: " . $e->getMessage();
 }
+
+// Redirection vers la page de formulaire avec un message d'erreur en cas de problème
 header("Location: sign.php?message=" . urlencode($signupMessage));
 exit();
 ?>

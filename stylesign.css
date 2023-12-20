@@ -38,7 +38,7 @@ html,body {
     position: relative;
     background-color: #ffffff;
     border-radius: 15px;
-    height: 500px; /* Taille fixe du formulaire */
+    height: 550px; /* Taille fixe du formulaire */
     width: 350px; /* Taille fixe du formulaire */
     overflow: hidden;
     flex-grow: 1;

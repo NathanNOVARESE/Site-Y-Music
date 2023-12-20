@@ -18,7 +18,9 @@
         <div class="form_input">
         <div id="messageDiv" style="display: none;"></div> 
         <form method="POST" action="traitement.php">
-        <input type="text" name="firstname" placeholder="First Name" required>
+            <input type="file" name="profile_picture" accept="image/*">
+            <br />
+            <input type="text" name="firstname" placeholder="First Name" required>
             <br />
             <input type="text" name="lastname" placeholder="Last Name" required>
             <br />
