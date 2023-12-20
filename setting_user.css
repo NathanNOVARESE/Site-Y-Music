@@ -1,18 +1,84 @@
-body{
+/* CSS in setting_user.css */
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     background-color: #f5f5f5;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
 }
 
+/* Search Bar */
+.search_bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
 
-.search_bar{
-    width: 100%;
+.search_bar input[type="search"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 200px;
+}
+
+/* Account Overview */
+.compte_overview {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.compte_overview_img img {
+    width: 50px;
     height: 50px;
-    background-color: #fdccff;
-    border-bottom: 1px solid #9986d0;
-    position: fixed;
-    margin-bottom: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.compte_overview_text {
+    display: flex;
+    flex-direction: column;
+}
+
+.compte_overview_text h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.compte_overview_text h2 {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.compte_overview_text img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* Categories */
+.categorie {
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.Profile,
+.Setting {
+    cursor: pointer;
+}
+
+/* Support Section */
+.sav {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
