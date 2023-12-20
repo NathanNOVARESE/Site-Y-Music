@@ -21,8 +21,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <head>
     <title>Setting</title>
+    <link rel="stylesheet" href="css/setting_user.css">
 </head>
 <body>
-    <h1>Setting</h1>
+    <div class ="search_bar">
+        <input type ="search" name="search" placeholder="Search..">
+    </div>
+    <div class="compte_overview">
+        <div class="compte_overview_img">
+            <img src="img/Avatar.png" alt="Avatar">
+        </div>
+        <div class="compte_overview_text">
+            <h1>Welcome</h1>
+            <h2 id="username"></h2>
+            <img src="img/quit.png" alt="setting">
+        </div>
+    </div>
+    <div class="categorie">
+        <div class="Profile">
+            <p>Profile</p>
+        </div>
+        <div class="Setting">
+            <P>Setting</p>
+        </div>
+    </div>
+    <div class="sav">
+        <p>How can we help you ?</p>
+    </div>
 </body>
 </html>
