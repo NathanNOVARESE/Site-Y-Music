@@ -20,3 +20,58 @@ btn.addEventListener("click", () => {
     }
     open = !open
 });
+
+
+const card = document.querySelectorAll(".card")
+
+card.forEach(el => {
+    el.addEventListener("mousemove", e => {
+
+        let elRect = el.getBoundingClientRect()
+
+        let x = e.clientX - elRect.x
+        let y = e.clientY - elRect.y
+
+        let midCardHeight = elRect.width / 2
+        let midCardWidth = elRect.width / 2
+
+        let angleY = -(x - midCardWidth) / 2
+        let angleX = (y - midCardHeight) / 2
+
+        el.children[0].style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg) scale(1)`
+
+        
+    })
+
+    el.addEventListener("mouseleave", () => {
+        el.children[0].style.transform = "rotateX(0) rotateY(0)"
+    })
+
+})
+
+const card2 = document.querySelectorAll(".card2")
+
+card2.forEach(el => {
+    el.addEventListener("mousemove", e => {
+
+        let elRect = el.getBoundingClientRect()
+
+        let x = e.clientX - elRect.x
+        let y = e.clientY - elRect.y
+
+        let midCardHeight = elRect.width / 2
+        let midCardWidth = elRect.width / 2
+
+        let angleY = -(x - midCardWidth) / 2
+        let angleX = (y - midCardHeight) / 2
+
+        el.children[0].style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg) scale(1)`
+
+        
+    })
+
+    el.addEventListener("mouseleave", () => {
+        el.children[0].style.transform = "rotateX(0) rotateY(0)"
+    })
+
+})

@@ -4,12 +4,14 @@
 } 
 
 body{
-  background: rgb(0, 0, 0);
+  background: black;
   overflow: hidden;
 }
 
+/* Barre navigation */
 header .nav {
   background-color: #FFFFFF;
+  z-index: 2;
   padding: 0.5rem 2rem;
   display: flex;
   align-items: center;
@@ -18,13 +20,19 @@ header .nav {
   transform: 0.3s;
 }
 
+/* Logo */
+
 header .nav .logo{
   font-size: 1.5rem;
   color: #CDC5EB;
 }
 
+
+/* Menu Hamburger */
+
 header .nav .nav-list{
   display: flex;
+  position: absolute;
   align-items: center;
   gap: 2.2rem;
   color: #8975D1; 
@@ -33,6 +41,7 @@ header .nav .nav-list{
   padding: 0.4rem;
   font-size: 1.4rem;
   transition: 0.3s;
+  z-index: 2;
   @media screen and (max-width: 8000px){
     flex-direction: column;
     text-align: center;
@@ -77,9 +86,12 @@ header .nav .btn{
   border-radius: 0.5rem;
   cursor: pointer;
   display: none;
-  z-index: 1;
+  z-index: 2;
   @media screen and (max-width: 8000px){
     display: block;     
+    position: absolute;
+    top:4%;
+    right:0.5%;
   }
 }
 
@@ -101,6 +113,9 @@ header .nav .btn .row{
 }
 **/
 
+
+
+/* Search Bar*/
 header .nav .search-box{
   position: absolute;
   top: 50%;
@@ -145,6 +160,8 @@ header .nav .search-txt{
   
 }
 
+
+
 main{
   min-height: 20rem;
   display: flex;
@@ -152,24 +169,173 @@ main{
   justify-content: center;
 }
 
-main section{
-  max-width: 70%;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+
+/* Rectangle actualités */
+
+main .div-actu{
+  position: absolute;
+  z-index: 1;
+  background-color: aqua;
+  height: 2.5rem;
+  width: 10rem;
+  transform: translate(-40.5rem,-14.5rem);
+  padding: 0.2rem;
+  border-radius: 1.5rem;
 }
 
-main section h1{
-  font-size: 2.7rem;
-  color: rgb(218, 205, 205);
+main .text-actu{
+  text-align: center;
 }
 
-main section h2{
-  font-size: 1.8rem;
-  color: rgb(172, 171, 171);
+/* Page actualité -- BASE*/
+main .scroll-bg{
+  z-index: 1;
+  background: aqua;
+  width: 80rem;
+  height: 34rem;
+  border-radius: 1.5rem;
+  transform: translate(7%,15%);
+  position: relative;
 }
 
-main section p{
-  font-size: 1.4rem;
-  color: rgb(116, 104, 104);
+main .scroll-div{
+  width: 78rem;
+  background: rgb(0, 213, 255);
+  height: 32rem;
+  overflow: hidden;
+  overflow-y: scroll;
+  border-radius: 1.5rem 0rem 0rem 1.5rem;
+  transform: translate(1.5%,3.3%);
+}
+
+/* Le rond, voilà */
+.rond{
+  position: absolute;
+  background-color: aliceblue;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 5rem;
+  transform: translate(-34.3rem,-11.5rem);
+}
+
+/* Rectangle intérieur */
+main .festi_name{
+  background-color: rgba(0, 0, 0, 0.463);
+  border: 5px solid black;
+  border-radius: 1.5rem 0rem 0rem 1.5rem;
+  height: 7rem;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+main .festi_text{
+  background-color: rgba(0, 0, 0, 0.574);
+  border: 5px solid black;
+  border-radius: 1.5rem;
+  margin-top: 10rem;
+  margin-left: 1.8rem;
+  height: 35rem;
+  width: 30rem;
+  position: absolute;  
+}
+
+
+
+
+.card{
+  width: 20rem;
+  height: 24rem;
+  transform: translate(33rem,8rem);
+  perspective: 500px;
+  border-radius: 1.5rem;
+  border: 5px solid black;
+}
+
+.content-card{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: all 15s ease-out;
+}
+
+.content-card img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.5rem;
+}
+
+.card2{
+  width: 20rem;
+  height: 24.2rem;
+  transform: translate(55rem,-4rem);
+  perspective: 500px;
+  border-radius: 1.5rem;
+  border: 5px solid black;
+}
+
+
+
+
+main .festi_text .festi_text_1{
+  color: white;
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-left: 0.3rem;
+  font-size: 20px;
+}
+
+main .festi_text:hover{
+  background-color: rgba(0, 0, 0, 0.741);
+}
+
+
+
+
+
+/*
+main .scroll-text{
+  color: gray;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  padding: 0.8rem;
+  text-align: left;
+}
+*/
+
+
+/* Scroll bar custom */
+
+::-webkit-scrollbar{
+  width: 1rem;
+}
+
+::-webkit-scrollbar-track{
+  background: rgb(255, 255, 255);
+  border-radius: 1.5rem;
+}
+
+
+::-webkit-scrollbar-thumb{
+  background: linear-gradient(#642bff81,#ff22e57e);
+  border-radius: 1.5rem;
+  border: .10em solid hsl(0, 0%, 100%);
+  opacity: 0.;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background:  linear-gradient(#642bff,#ff22e5);
+}
+
+main .white-gradiant{
+  height: 100rem;
+  z-index: 0;
+  width: 8%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.768), rgba(255, 255, 255, 0.412), rgba(255, 255, 255, 0.067));
+  position: absolute;
+  left: 0px;
 }
