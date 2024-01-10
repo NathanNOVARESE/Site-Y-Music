@@ -2,12 +2,6 @@
 // Initialiser la session
 session_start();
 
-// Si l'utilisateur est déjà connecté, détruisez la session et redirigez-le vers la page de connexion
-if(!isset($_SESSION["username"])){
-    header("Location: login.php");
-    exit(); 
-}
-
 // Connectez-vous à votre base de données et récupérez les informations de l'utilisateur
 $signupMessage = '';
 $servername = "localhost";
@@ -24,8 +18,16 @@ try {
     $query->bindParam(':username', $_SESSION["username"]);
     $query->execute();
     $row = $query->fetch(PDO::FETCH_ASSOC);
+
+    if (!$row) {
+        throw new Exception("Utilisateur non trouvé.");
+    }
+
 } catch(PDOException $e) {  
     echo "Connection failed: " . $e->getMessage();
+}catch(Exception $e) {
+    // Gérer les erreurs liées à l'absence de données utilisateur
+    $signupMessage = $e->getMessage();
 }
 ?>
 <!DOCTYPE html>
@@ -42,8 +44,16 @@ try {
     </div>
     <div class="compte_overview">
         <div class="compte_overview_img">
-            <img src="data:image/<?php echo $row['format']; ?>;base64,<?php echo base64_encode($row['profile_picture']); ?>" alt="Avatar">
+        <?php
+            if ($row && isset($row['profile_picture'])) {
+                $imageData = $row['profile_picture'];
+                echo '<img src="data:image/jpeg;base64,' . $imageData . '" alt="Profile Picture">';
+            } else {
+                echo 'Image introuvable.';
+            }
+            ?>
         </div>
+
         <div class="compte_overview_text">
             <h1>Welcome</h1>
             <div class="usernam">

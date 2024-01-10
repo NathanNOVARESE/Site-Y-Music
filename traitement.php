@@ -1,4 +1,5 @@
 <?php
+session_start();
 $signupMessage = '';
 $servername = "localhost";
 $username = "root";
@@ -17,21 +18,10 @@ try {
         $password = $_POST['password'];
         $confpassword = $_POST['confpassword'];
         $profile_picture = $_FILES['profile_picture']['tmp_name'];
-        $format = $_POST['format'];   
 
-        // Si aucune image n'est téléchargée, utiliser l'image par défaut
-        if (empty($profile_picture)) {
-            $defaultImagePath = 'profile.png';
-            $imgContent = file_get_contents($defaultImagePath);
-            $format = pathinfo($defaultImagePath, PATHINFO_EXTENSION);
-        } else {
-            // Récupération du contenu de l'image téléchargée
-            $imgContent = file_get_contents($profile_picture);
-            $format = pathinfo($profile_picture, PATHINFO_EXTENSION);
-        }
-
-        // Encodage de l'image en base64
-        $imgBase64 = base64_encode($imgContent);
+         // Convertir l'image en base64 pour stockage dans la base de données
+         $imgContent = file_get_contents($profile_picture);
+         $imgBase64 = base64_encode($imgContent);
 
         // Vérification de la correspondance des mots de passe
         if ($password != $confpassword) {
@@ -51,14 +41,13 @@ try {
                 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
                 // Insertion de l'utilisateur dans la base de données avec la photo de profil
-                $query = $conn->prepare("INSERT INTO users (firstname, lastname, username, email, password, profile_picture,format) VALUES (:firstname, :lastname, :username, :email, :password, :profile_picture, :format)");
+                $query = $conn->prepare("INSERT INTO users (firstname, lastname, username, email, password, profile_picture) VALUES (:firstname, :lastname, :username, :email, :password, :profile_picture)");
                 $query->bindParam(':firstname', $firstname);
                 $query->bindParam(':lastname', $lastname);
                 $query->bindParam(':username', $username);
                 $query->bindParam(':email', $email);
                 $query->bindParam(':password', $hashedPassword);
                 $query->bindParam(':profile_picture', $imgBase64);
-                $query->bindParam(':format', $format);
                 $query->execute();
 
                 // Redirection vers la page d'accueil avec un message de succès
