@@ -51,7 +51,8 @@ try {
                 $query->execute();
 
                 // Redirection vers la page d'accueil avec un message de succès
-                header("Location: page_accueil.php?message=" . urlencode("Votre compte a bien été créé."));
+                $_SESSION['username'] = $username;
+                header("Location: page_accueil.php?");
                 exit();
             }
         }
@@ -63,4 +64,3 @@ try {
 // Redirection vers la page de formulaire avec un message d'erreur en cas de problème
 header("Location: sign.php?message=" . urlencode($signupMessage));
 exit();
-?>

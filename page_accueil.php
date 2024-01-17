@@ -1,12 +1,13 @@
 
 <?php
-  // Initialiser la session
   session_start();
-  // Si l'utilisateur est déjà connecté, détruisez la session et redirigez-le vers la page de connexion
-  if(!isset($_SESSION["username"])){
-    header("Location: login.php");
-    exit(); 
+  // Vérifiez d'abord s'il y a un message de statut de l'inscription dans l'URL
+  if (isset($_GET['signup_message'])) {
+      $signupMessage = $_GET['signup_message'];
+      // Affichez le message de statut (succès ou échec) ici où vous le souhaitez dans votre page
+      echo "<p>$signupMessage</p>";
   }
+
 ?>
 
 
