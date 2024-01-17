@@ -76,9 +76,7 @@ header .nav .nav-list .rect{
   transition: 0.3s;
 }
 
-header .nav .nav-list .rect:hover{
-  background-color: rgba(255, 255, 255, 0.667);
-}
+
 
 header .nav .btn{
   background: transparent;
@@ -96,7 +94,7 @@ header .nav .btn{
 }
 
 header .nav .btn:hover{
-  background: rgba(255, 255, 255, 0.667);
+  background: rgba(0, 0, 0, 0.667);
 }
 
 header .nav .btn .row{
@@ -113,7 +111,9 @@ header .nav .btn .row{
 }
 **/
 
-
+header .btn_accueil{
+  border: transparent;
+}
 
 /* Search Bar*/
 header .nav .search-box{
@@ -128,7 +128,7 @@ header .nav .search-box{
 }
 
 header .nav .search-box:hover{
-  background-color: rgba(53, 53, 53, 0.344);
+  background-color: rgba(53, 53, 53, 0.741);
 }
 
 header .nav .search-box:hover > .search-btn{
@@ -183,6 +183,10 @@ main .div-actu{
   border-radius: 1.5rem;
 }
 
+main .div-actu:hover{
+  background-color: rgb(0, 179, 179);
+}
+
 main .text-actu{
   text-align: center;
 }
@@ -230,6 +234,10 @@ main .festi_name{
   font-size: 35px;
   color: white;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+main .festi_name:hover{
+  background-color: rgba(0, 0, 0, 0.741);
 }
 
 main .festi_text{

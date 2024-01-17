@@ -26,7 +26,12 @@
     <header>
       <nav class="nav">
         <div class="logo">
-          <img src="Assets/logo.jpg" alt="Logo Site Y'music">
+        <button class="btn_accueil">
+          <a href="page_accueil.php">
+            <img src="Assets/logo.jpg" alt="Logo Site Y'music">
+          </a>
+        </button>
+
         </div>
         <div class="search-box">
           <input class="search-txt" type="text" name="" placeholder="Search...">
@@ -36,9 +41,7 @@
         </div>
           <ul class="nav-list">
             <li class="item"><a href="setting_user.php">Setting</a></li>
-            <li class="item"><a href="Festival1">Fest1</a></li>
-            <li class="item"><a href="Festival2">Fest2</a></li>
-            <li class="item"><a href="Festival3">Fest3</a></li>
+            <li class="item"><a href="Festival.php">Festival</a></li>
           </ul>
           <button class="btn" id="btn">
             <svg fill="#8975D1" class="hamburger" viewBox="0 0 100 100" width="45">
