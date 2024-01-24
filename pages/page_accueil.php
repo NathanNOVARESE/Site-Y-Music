@@ -1,12 +1,11 @@
 <?php
-  // Démarrer la session
   session_start();
 
-  // Vérifier s'il y a un message de statut d'inscription dans l'URL
+  // Vérifiez d'abord s'il y a un message de statut de l'inscription dans l'URL
   if (isset($_GET['signup_message'])) {
       $signupMessage = $_GET['signup_message'];
       
-      // Afficher le message de statut (succès ou échec)
+      // Affichez le message de statut (succès ou échec) ici où vous le souhaitez dans votre page
       echo "<p>$signupMessage</p>";
   }
 ?>
@@ -27,7 +26,6 @@
 <body>
     <header>
         <nav class="nav">
-            <!-- Logo -->
             <div class="logo">
                 <button class="btn_accueil">
                     <a href="page_accueil.php">
@@ -35,22 +33,16 @@
                     </a>
                 </button>
             </div>
-
-            <!-- Zone de recherche -->
             <div class="search-box">
                 <input class="search-txt" type="text" name="" placeholder="Search...">
                 <a class="search-btn" href="#">
                     <i class="fas fa-search"></i>
                 </a>
             </div>
-
-            <!-- Liste de navigation -->
             <ul class="nav-list">
                 <li class="item"><a href="setting_user.php">Setting</a></li>
                 <li class="item"><a href="Festival.php">Festival</a></li>
             </ul>
-
-            <!-- Bouton de menu hamburger -->
             <button class="btn" id="btn">
                 <svg fill="#8975D1" class="hamburger" viewBox="0 0 100 100" width="45">
                     <rect class="row top" width="80" height="10" x="10" y="30" rx="5"></rect>
@@ -63,71 +55,61 @@
 
     <main>
 
-        <div class="image_fond">
-          <img src="Assets/test1.jpg"  img="image_fond" alt="image de fond de page">
-        </div>
-
-        <!-- Section Actualités -->
         <div class="div-actu">
             <h1 class="text-actu">Actualités</h1>
         </div>
 
-        <!-- Div ronde -->
-        <div class="rond"></div>
+        <div class="rond">
 
-        <!-- Zone de défilement des actualités -->
+        </div>
+
         <div class="scroll-bg">
             <div class="scroll-div">
                 <div class="scroll-object">
-                    <!-- Contenu de l'actualité -->
 
-                    <!-- Nom du festival -->
                     <div class="festi_name">
-                        <p>Festival Givré les Angles</p>
+                        <p>Nom Festival</p>
                     </div>
 
-                    <!-- Texte du festival -->
                     <div class="festi_text">
                         <p class="festi_text_1">
-                        <p class="text">
-                          Bienvenue au Festival d'Hiver aux Angles, un événement unique célébrant la <strong>magie de l'hiver</strong> et la diversité de la musique et de l'humour. Situé dans les magnifiques Pyrénées-Orientales, ce festival éblouissant se déroule à la salle Angléo, offrant une vue panoramique sur les montagnes enneigées.
-                        </p>
-                        <p class="text">
-                          <strong>À Propos du Festival</strong>
-                        </p>
-                        <ul class="text_ul">
-                          <li class="text_li">Propose des spectacles variés : magie, stand-up, reggae, rock, etc.</li>
-                          <li class="text_li">Accueille des artistes nationaux et internationaux tels que Chantal Ladesou, Jamel Comedy Club, Marc-Antoine Le Bret, Kevin Mystère, etc.</li>
-                          <li class="text_li">Se déroule à la salle Angléo avec une vue sur les montagnes enneigées.</li>
-                          <li class="text_li">Organise un casting pour découvrir les talents locaux de demain.</li>
-                          <li class="text_li">Événement convivial et festif célébrant la magie de l'hiver et la musique.</li>
-                        </ul>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi labore eius alias quidem
+                            velit totam ex deleniti expedita. Architecto cum possimus aliquam ut ipsam magni recusandae
+                            iure dolore. Modi voluptate eius consectetur? Adipisci fugiat reprehenderit exercitationem,
+                            nam delectus autem perspiciatis rem, unde aliquam facilis at, dolor non illum amet fuga
+                            cupiditate tempore natus voluptatibus magnam. Libero placeat, asperiores molestias, eligendi
+                            provident officiis ducimus optio temporibus itaque ea ipsa, numquam aliquam. Sapiente
+                            quibusdam, vitae repudiandae delectus rerum, et deserunt minus iusto consectetur, minima optio
+                            eligendi recusandae cumque odit error placeat. Fuga quisquam officia ex blanditiis nam modi
+                            cum quae voluptates veritatis.
                         </p>
                     </div>
 
-                    <!-- Carte avec image 1 -->
                     <div class="card">
                         <div class="content-card">
+
                             <div class="festi_pic1">
-                                <img class="pic1" src="Assets/fgla1.jpg">
+                                <img class="pic1" src="Assets/quokka.jpg">
                             </div>
                         </div>
                     </div>
 
-                    <!-- Carte avec image 2 -->
                     <div class="card2">
                         <div class="content-card">
                             <div class="festi_pic2">
-                                <img class="pic2" src="Assets/fgla4.jpg">
+                                <img class="pic2" src="Assets/quokka2.jpg">
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
 
-        <!-- Fond blanc dégradé -->
-        <div class="white-gradiant"></div>
+        <div class="white-gradiant">
+
+        </div>
+
     </main>
 </body>
 

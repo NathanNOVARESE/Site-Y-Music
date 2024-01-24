@@ -3,7 +3,7 @@
 session_start();
 // Vérifiez si l'utilisateur est connecté, sinon redirigez-le vers la page de connexion
 if(!isset($_SESSION["username"])){
-  header("Location: login.php");
+  header("Location: ../login.php");
   exit(); 
 }
 // FILEPATH: /C:/Users/PC/Documents/Ynov/Site-Y-Music/profile.php
