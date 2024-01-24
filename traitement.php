@@ -1,3 +1,14 @@
+/*
+
+*Nom du fichier: traitement.php
+*Projet: Ymusic
+*Version: 1.0
+*Description: Ce fichier permet de se créer un compte
+*Auteur: Mayssa Hamdaoui
+*Date de création: 22.10.2023
+
+*/
+
 <?php
 session_start();
 $signupMessage = '';
@@ -10,7 +21,8 @@ try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    if(isset($_POST['submit'])) {
+    if (isset($_POST['submit'])) {
+        // Récupération des données du formulaire
         $firstname = $_POST['firstname'];
         $lastname = $_POST['lastname'];
         $username = $_POST['username'];
@@ -19,9 +31,9 @@ try {
         $confpassword = $_POST['confpassword'];
         $profile_picture = $_FILES['profile_picture']['tmp_name'];
 
-         // Convertir l'image en base64 pour stockage dans la base de données
-         $imgContent = file_get_contents($profile_picture);
-         $imgBase64 = base64_encode($imgContent);
+        // Convertir l'image en base64 pour stockage dans la base de données
+        $imgContent = file_get_contents($profile_picture);
+        $imgBase64 = base64_encode($imgContent);
 
         // Vérification de la correspondance des mots de passe
         if ($password != $confpassword) {
@@ -52,15 +64,17 @@ try {
 
                 // Redirection vers la page d'accueil avec un message de succès
                 $_SESSION['username'] = $username;
-                header("Location: page_accueil.php?");
+                header("Location: page_accueil.php");
                 exit();
             }
         }
     }
-} catch(PDOException $e) {  
+} catch (PDOException $e) {
+    // En cas d'erreur de connexion à la base de données
     $signupMessage = "Connection failed: " . $e->getMessage();
 }
 
 // Redirection vers la page de formulaire avec un message d'erreur en cas de problème
 header("Location: sign.php?message=" . urlencode($signupMessage));
 exit();
+?>

@@ -1,11 +1,11 @@
 /*
 
-*Nom du fichier: setting_user.php
+*Nom du fichier: security.php
 *Projet: Ymusic
 *Version: 1.0
-*Description: Ce fichier permet de se modifier les paramètres de l'utilisateur
+*Description: Ce fichier permet de se modifier les paramètres de sécurité de l'utilisateur
 *Auteur: Mayssa Hamdaoui
-*Date de création: 18.12.2023
+*Date de création: 20.01.2023
 
 */
 
@@ -73,9 +73,9 @@ try {
 <html>
 <head>
     <title>Setting</title>
-    <!-- Ajouter des liens vers des fichiers CSS externes -->
+    <!-- Ajouter des liens vers des fichiers CSS externe -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
-    <link rel="stylesheet" href="setting_user.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="security.css?v=<?php echo time(); ?>">
 </head>
 <body>
     <div class="header">
@@ -89,29 +89,33 @@ try {
         <div class="box">
             <div class="setting">
                 <div class="right">
-                    <!-- Section pour afficher le profil de l'utilisateur -->
-                    <div class="text-profile">Profile</div>
-                    
-                    <!-- Formulaire de mise à jour du profil -->
-                    <form method="POST" action="<?php echo $_SERVER["PHP_SELF"]; ?>" enctype="multipart/form-data">
-                        <!-- Champs de saisie pour les nouvelles informations -->
-                        <input type="text" id="new_lastname" class="input-ln" placeholder="<?php echo isset($row['lastname']) ? $row['lastname'] : ''; ?>" name="new_lastname">
-                        <input type="text" id="new_username" class="input-u" placeholder="<?php echo isset($row['username']) ? $row['username'] : ''; ?>" name="new_username">
-                        <input type="email" id="new_email" class="input-mail" placeholder="<?php echo isset($row['email']) ? $row['email'] : ''; ?>" name="new_email">
-                        <input type="text" id="new_firstname" class="input-fn" placeholder="<?php echo isset($row['firstname']) ? $row['firstname'] : ''; ?>" name="new_firstname">
-                        
-                        <!-- Bouton de soumission du formulaire -->
-                        <button type="submit" class="submit"><div class="submit-text">Submit</div></button>
-                    </form>
-                    
-                    <!-- Affichage des informations actuelles de l'utilisateur -->
-                    <div class="username">Username: <?php echo isset($row['username']) ? $row['username'] : ''; ?></div>
-                    <div class="email">Email: <?php echo isset($row['email']) ? $row['email'] : ''; ?></div>
-                    <div class="first-n">First Name: <?php echo isset($row['firstname']) ? $row['firstname'] : ''; ?></div>
-                    <div class="last-n">Last Name: <?php echo isset($row['lastname']) ? $row['lastname'] : ''; ?></div>
+                    <!-- Section pour changer le mot de passe -->
+                    <div class="text-profile">Password and security</div>
+                    <div class="change_password">Change password</div>
+                    <div class="div_change_password">
+                        <!-- Formulaire de changement de mot de passe -->
+                        <form action="security.php" method="post">
+                            <!-- Champs pour le nouveau mot de passe -->
+                            <div class="div_new_password">
+                                <div class="new_password">New password</div>
+                                <input type="password" name="new_password" class="input_new_password" placeholder="New password">
+                            </div>
+
+                            <!-- Champs pour le mot de passe actuel et la confirmation -->
+                            <div class="div_confirm_password">
+                                <div class="ancien_password">Current password</div>
+                                <input type="password" name="current_password" class="input_current_password" placeholder="Current password">
+                                <div class="new_password">New password</div>
+                                <input type="password" name="new_password" class="input_new_password" placeholder="New password">
+                                <div class="confirm_password">Confirm password</div>
+                                <input type="password" name="confirm_password" class="input_confirm_password" placeholder="Confirm password">
+                                <button class="submit"><div class="submit-text">Submit</div></button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
                 <div class="left">
-                    <!-- Section pour afficher le profil utilisateur -->
+                    <!-- Section pour le profil utilisateur -->
                     <div class="overlap">
                         <div class="profile-wrapper"><div class="profile" onclick="window.location.href='setting_user.php'">Profile</div></div>
                         <div class="security-wrapper"><div class="security" onclick="window.location.href='security.php'">Sécurité</div></div>
@@ -120,6 +124,7 @@ try {
                         <div class="image_change">
                             <img class="profile-picture" src="" />
                             <?php
+                                // Afficher l'image de profil de l'utilisateur
                                 if ($row && isset($row['profile_picture'])) {
                                     $imageData = $row['profile_picture'];
                                     echo '<img src="data:image/jpeg;base64,' . $imageData . '" class="profile-picture">';
@@ -158,6 +163,7 @@ try {
                         <!-- Informations sur le nom d'utilisateur -->
                         <div class="username-info">
                             <?php
+                                // Afficher le nom d'utilisateur de l'utilisateur
                                 if ($row && isset($row['username'])) {
                                     $username = $row['username'];
                                     echo $username;
@@ -168,7 +174,7 @@ try {
                         </div>
 
                         <!-- Section pour obtenir de l'aide -->
-                        <div class="sav-text-wrapper"><p class="sav-text">How can we help you ?</p></div>
+                        <div class="sav-text-wrapper" onclick=""><p class="sav-text">How can we help you ?</p></div>
                     </div>
                 </div>
             </div>
