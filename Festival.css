@@ -1,398 +1,383 @@
-*{
-    margin: 0;
-    padding: 0;
-  } 
-  
-  body{
-    background: black;
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
-  
-  /* Barre navigation */
-  header .nav {
-    background-color: #FFFFFF;
-    z-index: 2;
-    padding: 0.5rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    transform: 0.3s;
-  }
-  
-  /* Logo */
-  
-  header .nav .logo{
-    font-size: 1.5rem;
-    color: #CDC5EB;
-  }
-  
-  
-  /* Menu Hamburger */
-  
-  header .nav .nav-list{
-    display: flex;
-    position: absolute;
-    align-items: center;
-    gap: 2.2rem;
-    color: #8975D1; 
-    list-style: none;
-    text-align: center;
-    padding: 0.4rem;
-    font-size: 1.4rem;
-    transition: 0.3s;
-    flex-direction: column;
-    text-align: center;
-    position: absolute;
-    top: -1rem;
-    background-color: rgba(174, 174, 174, 0.2);
-    backdrop-filter: blur(10px);
-    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
-    width: 30%;
-    height: 100vh;
-    right: -100%;
-    justify-content: center;
-  }
-  
-  header .nav .nav-list a{
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.3 ease;
-  }
-  
-  header .nav .nav-list a:hover{
-    color: #CDC5EB;
-  }
-  
-  header .nav .nav-list .rect{
-    border: 2px solid #8975D1;
-    border-radius: 0.5rem;
-    padding: 0.6rem;
-    cursor: pointer;
-    color: #CDC5EB;
-    transition: 0.3s;
-  }
-  
-  
-  
-  header .nav .btn{
-    background: transparent;
-    border: 2px solid #8975D1;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    display: none;
-    z-index: 2;
-    @media screen and (max-width: 8000px){
-      display: block;     
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: black;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Barre navigation */
+
+header .nav {
+  background-color: #FFFFFF;
+  z-index: 2;
+  padding: 0.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  transform: 0.3s;
+}
+
+/* Logo */
+
+header .nav .logo {
+  font-size: 1.5rem;
+  color: #CDC5EB;
+}
+
+/* Menu Hamburger */
+
+header .nav .nav-list {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  gap: 2.2rem;
+  color: #8975D1;
+  list-style: none;
+  text-align: center;
+  padding: 0.4rem;
+  font-size: 1.4rem;
+  transition: 0.3s;
+  flex-direction: column;
+  text-align: center;
+  position: absolute;
+  top: -1rem;
+  background-color: rgba(174, 174, 174, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  height: 100vh;
+  right: -100%;
+  justify-content: center;
+}
+
+header .nav .nav-list a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3 ease;
+}
+
+header .nav .nav-list a:hover {
+  color: #CDC5EB;
+}
+
+header .nav .nav-list .rect {
+  border: 2px solid #8975D1;
+  border-radius: 0.5rem;
+  padding: 0.6rem;
+  cursor: pointer;
+  color: #CDC5EB;
+  transition: 0.3s;
+}
+
+header .nav .btn {
+  background: transparent;
+  border: 2px solid #8975D1;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: none;
+  z-index: 2;
+}
+
+@media screen and (max-width: 8000px) {
+  header .nav .btn {
+      display: block;
       position: absolute;
-      top:4%;
-      right:0.5%;
-    }
+      top: 4%;
+      right: 0.5%;
   }
-  
-  header .nav .btn:hover{
-    background: rgba(0, 0, 0, 0.667);
-  }
-  
-  header .nav .btn .row{
-    transition: all 0.3s;
-    transform-origin: center;
-  }
-  
-  /**
-  @media screen and (max-width: 8000px) {
-    .btn {
-      position: absolute;
-      left: 0;
-    }
-  }
-  **/
-  
-  
-  
-  /* Search Bar*/
-  header .nav .search-box{
-    position: absolute;
-    top: 50%;
-    right: -2%;
-    transform: translate(-50%, -50%);
-    background: #2f3640;
-    height: 1.5rem;
-    border-radius: 1.5rem;
-    padding: 0.5rem;
-  }
-  
-  header .nav .search-box:hover{
-    background-color: rgba(53, 53, 53, 0.741);
-  }
-  
-  header .nav .search-box:hover > .search-btn{
-    background: white;
-  }
-  
-  header .nav .search-btn{
-    color: #CDC5EB;
-    float: right;
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 1.5rem;
-    background-color: #2f3640;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  header .nav .search-txt{
-    border: none;
-    background: none;
-    outline: none;
-    float: left;
-    padding: 0;
-    color: white;
-    font-size: 16px;
-    transition: 0.3s;
-    line-height: 1.5rem;
-    
-  }
+}
 
-  header .btn_accueil{
-    border: transparent;
-  }
+header .nav .btn:hover {
+  background: rgba(0, 0, 0, 0.667);
+}
 
+header .nav .btn .row {
+  transition: all 0.3s;
+  transform-origin: center;
+}
 
-  /* Fin du Header */
+/* Search Bar */
 
+header .nav .search-box {
+  position: absolute;
+  top: 50%;
+  right: -2%;
+  transform: translate(-50%, -50%);
+  background: #2f3640;
+  height: 1.5rem;
+  border-radius: 1.5rem;
+  padding: 0.5rem;
+}
 
-  /* Début Présentation Festival */
+header .nav .search-box:hover {
+  background-color: rgba(53, 53, 53, 0.741);
+}
 
-  main .Festival{
-    z-index: 1;
-    position: absolute;
-    width: 6.5rem;
-    height: 2rem;
-    background-color: aqua;
-    border-radius: 1.5rem;
-    transform: translate(1rem , 1.5rem);
-    padding: 0.2rem 1rem;
-  }
+header .nav .search-box:hover > .search-btn {
+  background: white;
+}
 
-  main .Festival h1{
-    font-size: 30px;
-  }
+header .nav .search-btn {
+  color: #CDC5EB;
+  float: right;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 1.5rem;
+  background-color: #2f3640;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  main .Nord{
-    z-index: 1;
-    position: absolute;
-    width: 4rem;
-    height: 2rem;
-    background-color: aqua;
-    border-radius: 1.5rem;
-    padding: 0.2rem 1rem;
-    transform: translate(10rem, 6rem);
-  }
-  
-  main .Sud{
-    position: absolute;
-    z-index: 1;
-    width: 4rem;
-    height: 2rem;
-    background-color: aqua;
-    border-radius: 1.5rem;
-    padding: 0.2rem 1rem;
-    transform: translate(10rem, 34.5rem);
-  }
-  
-  main .Est{
-    position: absolute;
-    z-index: 1;
-    width: 4rem;
-    height: 2rem;
-    background-color: aqua;
-    border-radius: 1.5rem;
-    padding: 0.2rem 1rem;
-    transform: translate(10rem, 66rem);
-  }
-  
-  main .Ouest{
-    position: absolute;
-    z-index: 1;
-    width: 4.5rem;
-    height: 2rem;
-    background-color: aqua;
-    border-radius: 1.5rem;
-    padding: 0.2rem 1rem;
-    transform: translate(10rem, 99rem);
-  }
+header .nav .search-txt {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: white;
+  font-size: 16px;
+  transition: 0.3s;
+  line-height: 1.5rem;
+}
 
+header .btn_accueil {
+  border: transparent;
+}
 
-  main .scroll{
-    position: absolute;
-    width: 5rem;
-    height: 10rem;
-    background-color: transparent;
-    top: 120rem;
-
-  }
-
-  main h2{
-    font-size: 30px;
-    text-align: center;
-  }
+/* Fin du Header */
 
 
 
-  /* Début présentation Festivals */
+/* Début Présentation Festival */
 
-  .card {
-    position: absolute;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    background-color: aqua;
-    width: 15rem;
+main .Festival {
+  z-index: 1;
+  position: absolute;
+  width: 6.5rem;
+  height: 2rem;
+  background-color: aqua;
+  border-radius: 1.5rem;
+  transform: translate(1rem, 1.5rem);
+  padding: 0.2rem 1rem;
+}
 
-  }
-  
-  .card:hover {
-    box-shadow: 16px 8px 16px 16px rgba(0,0,0,0.2);
-  }
-  
-  .container {
-    padding: 0.2rem;
-    
-  }
+main .Festival h1 {
+  font-size: 30px;
+}
 
-  /* Début Div Nord */
+main .Nord {
+  z-index: 1;
+  position: absolute;
+  width: 4rem;
+  height: 2rem;
+  background-color: aqua;
+  border-radius: 1.5rem;
+  padding: 0.2rem 1rem;
+  transform: translate(10rem, 6rem);
+}
 
-  main .image_fond1{
-    z-index: 0;
-    position: absolute;
-    width: 98.9%;
-    height: 30rem;
-    border: 10px black solid;
-    overflow: hidden;
-    filter: blur(1.5rem);
-  }
+main .Sud {
+  position: absolute;
+  z-index: 1;
+  width: 4rem;
+  height: 2rem;
+  background-color: aqua;
+  border-radius: 1.5rem;
+  padding: 0.2rem 1rem;
+  transform: translate(10rem, 34.5rem);
+}
 
-  
+main .Est {
+  position: absolute;
+  z-index: 1;
+  width: 4rem;
+  height: 2rem;
+  background-color: aqua;
+  border-radius: 1.5rem;
+  padding: 0.2rem 1rem;
+  transform: translate(10rem, 66rem);
+}
 
-  main .Nord_fest{
-    position: absolute;
-    border: aqua 2px;
-    background-color: rebeccapurple;
-    width: 75rem;
-    height: 19rem;
-    transform: translate(10rem,10rem);
-    border-radius: 1.5rem;
-  }
+main .Ouest {
+  position: absolute;
+  z-index: 1;
+  width: 4.5rem;
+  height: 2rem;
+  background-color: aqua;
+  border-radius: 1.5rem;
+  padding: 0.2rem 1rem;
+  transform: translate(10rem, 99rem);
+}
 
-  main .Nord_fest .soli{
-    top: 1.1rem;
-    left: 1rem;
-  }
+main .scroll {
+  position: absolute;
+  width: 5rem;
+  height: 10rem;
+  background-color: transparent;
+  top: 120rem;
+}
 
-  main .Nord_fest .close{
-    top: 1.1rem;
-    left: 17.1rem;
-  }
+main h2 {
+  font-size: 30px;
+  text-align: center;
+}
 
-  /* Fin Div Nord */
-
-
-
-  /* Début Div Sud*/
-
-  main .image_fond2{
-    z-index: 0;
-    position: absolute;
-    width: 98.9%;
-    height: 30rem;
-    top: 36rem;
-    border: 10px black solid;
-    overflow: hidden;
-    filter: blur(1.5rem);
-  }
-
-  main .Sud_fest{
-    position: absolute;
-    border: aqua 2px;
-    background-color: rebeccapurple;
-    width: 75rem;
-    height: 19rem;
-    transform: translate(10rem,41rem);
-    border-radius: 1.5rem;
-  }
-
-  main .Sud_fest .elecbeachfest{
-    top: 1.1rem;
-    left: 1rem;
-  }
-
-  /* Fin Div Sud */
+/* Fin Présentation Festival */
 
 
 
-  /* Début Div Est */
+/* CSS pour les cartes */
 
-  main .image_fond3{
-    z-index: 0;
-    position: absolute;
-    width: 98.9%;
-    height: 30rem;
-    top: 68rem;
-    border: 10px black solid;
-    overflow: hidden;
-    filter: blur(1.5rem);
+.card {
+  position: absolute;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  background-color: aqua;
+  width: 15rem;
+}
 
-  }
+.card:hover {
+  box-shadow: 16px 12px 16px 8px rgba(0, 0, 0, 0.2);
+}
 
-  main .Est_fest{
-    position: absolute;
-    border: aqua 2px;
-    background-color: rebeccapurple;
-    width: 75rem;
-    height: 19rem;
-    transform: translate(10rem,73rem);
-    border-radius: 1.5rem;
-  }
-
-  main .Est_fest .summer{
-    top: 1.1rem;
-    left: 1rem;
-  }
-
-  /* Fin Div  Est*/
+.container {
+  padding: 0.2rem;
+}
 
 
 
-  /* Début Div Ouest */
+/* Début Div Nord */
 
-  main .image_fond4{
-    z-index: 0;
-    position: absolute;
-    width: 98.9%;
-    height: 30rem;
-    top: 100rem;
-    border: 10px black solid;
-    overflow: hidden;
-    filter: blur(1.5rem);
-  }
+main .image_fond1 {
+  z-index: 0;
+  position: absolute;
+  width: 98.9%;
+  height: 30rem;
+  border: 10px black solid;
+  overflow: hidden;
+  filter: blur(1.5rem);
+}
 
-  main .Ouest_fest{
-    position: absolute;
-    border: aqua 2px;
-    background-color: rebeccapurple;
-    width: 75rem;
-    height: 19rem;
-    transform: translate(10rem,106rem);
-    border-radius: 1.5rem;
-  }
+main .Nord_fest {
+  position: absolute;
+  border: aqua 2px;
+  background-color: rebeccapurple;
+  width: 75rem;
+  height: 19rem;
+  transform: translate(10rem, 10rem);
+  border-radius: 1.5rem;
+}
 
-  main .Ouest_fest .hellfest{
-    top: 1.1rem;
-    left: 1rem;
-  }
+main .Nord_fest .soli {
+  top: 1.1rem;
+  left: 1rem;
+}
 
-  /* Fin Div Ouest */
+main .Nord_fest .close {
+  top: 1.1rem;
+  left: 17.1rem;
+}
 
-  
+/* Fin Div Nord */
+
+
+
+/* Début Div Sud*/
+
+main .image_fond2 {
+  z-index: 0;
+  position: absolute;
+  width: 98.9%;
+  height: 30rem;
+  top: 36rem;
+  border: 10px black solid;
+  overflow: hidden;
+  filter: blur(1.5rem);
+}
+
+main .Sud_fest {
+  position: absolute;
+  border: aqua 2px;
+  background-color: rebeccapurple;
+  width: 75rem;
+  height: 19rem;
+  transform: translate(10rem, 41rem);
+  border-radius: 1.5rem;
+}
+
+main .Sud_fest .elecbeachfest {
+  top: 1.1rem;
+  left: 1rem;
+}
+
+/* Fin Div Sud */
+
+
+
+/* Début Div Est */
+
+main .image_fond3 {
+  z-index: 0;
+  position: absolute;
+  width: 98.9%;
+  height: 30rem;
+  top: 68rem;
+  border: 10px black solid;
+  overflow: hidden;
+  filter: blur(1.5rem);
+}
+
+main .Est_fest {
+  position: absolute;
+  border: aqua 2px;
+  background-color: rebeccapurple;
+  width: 75rem;
+  height: 19rem;
+  transform: translate(10rem, 73rem);
+  border-radius: 1.5rem;
+}
+
+main .Est_fest .summer {
+  top: 1.1rem;
+  left: 1rem;
+}
+
+/* Fin Div  Est*/
+
+
+
+/* Début Div Ouest */
+
+main .image_fond4 {
+  z-index: 0;
+  position: absolute;
+  width: 98.9%;
+  height: 30rem;
+  top: 100rem;
+  border: 10px black solid;
+  overflow: hidden;
+  filter: blur(1.5rem);
+}
+
+main .Ouest_fest {
+  position: absolute;
+  border: aqua 2px;
+  background-color: rebeccapurple;
+  width: 75rem;
+  height: 19rem;
+  transform: translate(10rem, 106rem);
+  border-radius: 1.5rem;
+}
+
+main .Ouest_fest .hellfest {
+  top: 1.1rem;
+  left: 1rem;
+}
+
+/* Fin Div Ouest */

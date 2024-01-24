@@ -8,7 +8,7 @@ body{
   overflow: hidden;
 }
 
-/* Barre navigation */
+/* Barre navigation + Début Header */
 header .nav {
   background-color: #FFFFFF;
   z-index: 2;
@@ -77,7 +77,6 @@ header .nav .nav-list .rect{
 }
 
 
-
 header .nav .btn{
   background: transparent;
   border: 2px solid #8975D1;
@@ -116,6 +115,7 @@ header .btn_accueil{
 }
 
 /* Search Bar*/
+
 header .nav .search-box{
   position: absolute;
   top: 50%;
@@ -160,7 +160,7 @@ header .nav .search-txt{
   
 }
 
-
+/* Fin du header */
 
 main{
   min-height: 20rem;
@@ -168,7 +168,6 @@ main{
   align-items: center;
   justify-content: center;
 }
-
 
 /* Rectangle actualités */
 
@@ -191,7 +190,8 @@ main .text-actu{
   text-align: center;
 }
 
-/* Page actualité -- BASE*/
+/* Page actualité -- BASE */
+
 main .scroll-bg{
   z-index: 1;
   background: aqua;
@@ -213,6 +213,7 @@ main .scroll-div{
 }
 
 /* Le rond, voilà */
+
 .rond{
   position: absolute;
   background-color: aliceblue;
@@ -223,6 +224,7 @@ main .scroll-div{
 }
 
 /* Rectangle intérieur */
+
 main .festi_name{
   background-color: rgba(0, 0, 0, 0.463);
   border: 5px solid black;
@@ -252,7 +254,7 @@ main .festi_text{
 }
 
 
-
+/* Début carte 3D */
 
 .card{
   width: 20rem;
@@ -286,6 +288,7 @@ main .festi_text{
   border: 5px solid black;
 }
 
+/* Fin carte 3D */
 
 
 
@@ -326,7 +329,6 @@ main .scroll-text{
   background: rgb(255, 255, 255);
   border-radius: 1.5rem;
 }
-
 
 ::-webkit-scrollbar-thumb{
   background: linear-gradient(#642bff81,#ff22e57e);
