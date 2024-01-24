@@ -16,7 +16,7 @@
     <title>Inscription</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link type="text/css" href="stylesign.css" rel="stylesheet">
+    <link type="text/css" href="/Assets/styles/stylesign.css" rel="stylesheet">
     <link rel="icon" href="icon.png">
 </head>
 

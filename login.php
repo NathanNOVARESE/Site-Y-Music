@@ -1,13 +1,9 @@
-/*
-
-*Nom du fichier: login.php
-*Projet: Ymusic
-*Version: 1.0
-*Description: Ce fichier permet de se connecter à la page d'acceuil
-*Auteur: Mayssa Hamdaoui
-*Date de création: 22.10.2023
-
-*/
+// Nom du fichier: login.php
+// Projet: Ymusic
+// Version: 1.0
+// Description: Ce fichier permet de se connecter à la page d'acceuil
+// Auteur: Mayssa Hamdaoui
+// Date de création: 22.10.2023
 
 <?php
 // Démarre la session PHP
@@ -46,7 +42,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Utilisateur trouvé, connecté avec succès
             $_SESSION['username'] = $username;
             $signupMessage = "Vous êtes connecté !";
-            header('Location: page_accueil.php'); // Redirection vers la page d'accueil si l'utilisateur est connecté
+            header('Location: /pages/page_accueil.php'); // Redirection vers la page d'accueil si l'utilisateur est connecté
             exit();
         } else {
             // Affiche un message d'erreur si le nom d'utilisateur ou le mot de passe est incorrect
@@ -65,7 +61,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" constent="ie=edge">
     <!-- Liens vers les feuilles de style -->
-    <link type="text/css" href="stylelogin.css" rel="stylesheet">
+    <link type="text/css" href="/Assets/styles/stylelogin.css" rel="stylesheet">
     <link rel="icon" href="icon.png">
 </head>
 <body>

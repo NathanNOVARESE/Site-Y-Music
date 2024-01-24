@@ -1,8 +1,6 @@
-/* Import de la police Fira Sans depuis Google Fonts */
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans");
 
-/* Style global pour le HTML et le body */
-html, body {
+html,body {
     position: relative;
     min-height: 100vh;
     background-color: #000000;
@@ -14,7 +12,6 @@ html, body {
     overflow-x: hidden;
 }
 
-/* Conteneur principal avec mise en page flexible */
 .container {
     display: flex;
     justify-content: center;
@@ -24,7 +21,6 @@ html, body {
     font-size: 16px; /* Taille de base */
 }
 
-/* Style de l'image */
 .image {
     margin-right: 2rem; /* Marge à gauche */
     margin-left: 20rem; /* Marge à droite */
@@ -38,7 +34,6 @@ html, body {
     margin: 0 auto;
 }
 
-/* Style du formulaire */
 .form {
     position: relative;
     background-color: #ffffff;
@@ -50,14 +45,12 @@ html, body {
     margin-left: 1rem; /* Marge à gauche */
 }
 
-/* Style du texte dans le conteneur principal */
 .container {
     font-size: 1.5rem; /* Taille de police */
     font-weight: 700;
     margin-bottom: 1.25rem; /* Marge basse */
 }
 
-/* Style des éléments du formulaire */
 .form_input label,
 .form_input input {
     width: 90%;
@@ -76,7 +69,6 @@ html, body {
     flex-direction: column;
 }
 
-/* Style des boutons */
 .button button,
 .button_inscription button {
     width: 94%;
@@ -90,7 +82,6 @@ html, body {
     cursor: pointer;
 }
 
-/* Style des paragraphes */
 .p {
     margin-top: 0;
     font-size: 20px; /* Taille fixe de la police */
@@ -101,7 +92,6 @@ html, body {
     align-items: center;
 }
 
-/* Style de la ligne de division */
 .divider {
     display: flex;
     align-items: center;
@@ -120,9 +110,19 @@ html, body {
     margin: 0 20px;
 }
 
-/* Style des liens de mot de passe */
-.motdepasse a {
+.p {
+    margin: 0 2px; /* Ajustement pour centrer le mot "ou" */
+}
+
+button:hover{
+    background-color: rgb(34, 33, 36);
     color: #000000;
+    border: 1px solid #000000;
+}
+
+.motdepasse a{
+    color:#000000;
+    
 }
 
 .motdepasse {
@@ -135,14 +135,6 @@ html, body {
     align-items: center;
 }
 
-/* Style du survol des liens de mot de passe */
-.motdepasse a:hover {
-    color: rgb(34, 33, 36);
-}
-
-/* Style du survol des boutons */
-button:hover {
-    background-color: rgb(34, 33, 36);
-    color: #000000;
-    border: 1px solid #000000;
+.motdepasse a:hover{
+    color: rgb(34, 33, 36)
 }

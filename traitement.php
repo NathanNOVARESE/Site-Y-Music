@@ -64,7 +64,7 @@ try {
 
                 // Redirection vers la page d'accueil avec un message de succès
                 $_SESSION['username'] = $username;
-                header("Location: page_accueil.php");
+                header("Location: /pages/page_accueil.php");
                 exit();
             }
         }
