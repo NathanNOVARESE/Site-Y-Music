@@ -318,3 +318,21 @@ body{
   line-height: normal;
 }
 
+.image_change{
+  display: inline-block;
+}
+
+.image_change button{
+  z-index: 90000000000;
+  position:absolute;
+  top: 20%;
+  left: 55%;
+  width: 10%;
+  height: 5%;
+  border-radius: 100%;
+  background-color: black;
+}
+
+.fas {
+  color: white !important; /* Utilisez !important pour s'assurer que cette règle prend le dessus sur d'autres styles */
+}
