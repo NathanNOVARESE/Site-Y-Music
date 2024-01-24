@@ -78,11 +78,11 @@
         </div>
 
         <div class="image_fond3">
-            <img src="Assets/image_fond3bis.jpg" alt="image fond2" width="100%" height="100%">
+            <img src="Assets/image_fond3bis.jpg" alt="image fond3" width="100%" height="100%">
         </div>
 
         <div class="image_fond4">
-            <img src="Assets/image_fond4.jpg" alt="image fond2" width="100%" height="100%">
+            <img src="Assets/image_fond4.jpg" alt="image fond3" width="100%" height="100%">
         </div>
 
         <!-- North, South, East, West Divisions with Festival Information -->
@@ -92,7 +92,7 @@
                 <img src="Assets/Solidays.jpg" alt="Solidays" height="200rem" width="240rem">
                 <div class="container">
                     <h4><b>Solidays</b></h4>
-                    <p>Festival à Paris du 28 au 30 Juin 2024</p>
+                    <p>Festival à Paris, du 28 au 30 Juin 2024</p>
                 </div>
             </div>
 
@@ -100,27 +100,27 @@
                 <img src="Assets/closermusic.jpg" alt="Closer Music" height="200rem" width="240rem">
                 <div class="container">
                     <h4><b>Closer Music</b></h4>
-                    <p>Festival à Paris du 19 au 21 Janvier 2024</p>
+                    <p>Festival à Paris, du 19 au 21 Janvier 2024</p>
                 </div>
             </div>
         </div>
 
         <div class="Sud_fest">
             <div class="card elecbeachfest">
-                <img src="Assets/electrobeachfest.jpg" alt="Electro Beach Music Festival" height="200rem" width="240rem">
+                <img src="Assets/fjs.jpg" alt="Festival Jardin Sonore" height="200rem" width="240rem">
                 <div class="container">
-                    <h4><b>Electro Beach Music Festival</b></h4>
-                    <p>Lorem ipsum dolor sit amet add adrtf ftg</p>
+                    <h4><b>Festival Jardin Sonore</b></h4>
+                    <p>Festival à Vitrolles, du 10 au 13 Juillet 2024 </p>
                 </div>
             </div>
         </div>
 
         <div class="Est_fest">
             <div class="card summer">
-                <img src="Assets/summervibration.jpg" alt="Summer Vibration" height="200rem" width="240rem">
+                <img src="Assets/rybf.jpg" alt="Rock Your Brain Fest" height="200rem" width="240rem">
                 <div class="container">
-                    <h4><b>Summer Vibration</b></h4>
-                    <p>Lorem ipsum dolor sit amet add adrtf ftg</p>
+                    <h4><b>Rock Your Brain Fest</b></h4>
+                    <p>Festival à Sélestat, du 20 au 21 Octobre 2024</p>
                 </div>
             </div>
         </div>
@@ -130,7 +130,7 @@
                 <img src="Assets/hellfest.jpg" alt="HellFest" height="200rem" width="240rem">
                 <div class="container">
                     <h4><b>HellFest</b></h4>
-                    <p>Lorem ipsum dolor sit amet add adrtf ftg</p>
+                    <p>Festival à Clisson, du 27 au 29 Juin 2024</p>
                 </div>
             </div>
         </div>
