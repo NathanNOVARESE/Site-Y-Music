@@ -84,7 +84,12 @@ try {
         <button class="fas fa-search" id="ellipse"></button>
 
         <!-- Logo -->
-        <img class="logo" src="../Assets/logo.png" />
+        <img class="logo" onclick="open_accueil()" src="../Assets/logo.png" />
+        <script>
+            function open_accueil(){
+                window.location.href="page_accueil.php"
+            }
+        </script>
 
         <div class="box">
             <div class="setting">

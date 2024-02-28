@@ -1,13 +1,10 @@
-/*
 
-*Nom du fichier: traitement.php
-*Projet: Ymusic
-*Version: 1.0
-*Description: Ce fichier permet de se créer un compte
-*Auteur: Mayssa Hamdaoui
-*Date de création: 22.10.2023
-
-*/
+//Nom du fichier: traitement.php
+//Projet: Ymusic
+//Version: 1.0
+//Description: Ce fichier permet de se créer un compte
+//Auteur: Mayssa Hamdaoui
+//Date de création: 22.10.2023
 
 <?php
 session_start();
