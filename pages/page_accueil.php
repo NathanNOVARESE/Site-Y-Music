@@ -29,7 +29,7 @@
             <div class="logo">
                 <button class="btn_accueil">
                     <a href="page_accueil.php">
-                        <img src="Assets/logo.jpg" alt="Logo Site Y'music">
+                        <img src="../Assets/logo.jpg" alt="Logo Site Y'music">
                     </a>
                 </button>
             </div>
@@ -89,7 +89,7 @@
                         <div class="content-card">
 
                             <div class="festi_pic1">
-                                <img class="pic1" src="Assets/quokka.jpg">
+                                <img class="pic1" src="../Assets/quokka.jpg">
                             </div>
                         </div>
                     </div>
@@ -97,7 +97,7 @@
                     <div class="card2">
                         <div class="content-card">
                             <div class="festi_pic2">
-                                <img class="pic2" src="Assets/quokka2.jpg">
+                                <img class="pic2" src="../Assets/quokka2.jpg">
                             </div>
                         </div>
                     </div>

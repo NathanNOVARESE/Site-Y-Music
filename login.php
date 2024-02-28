@@ -1,9 +1,3 @@
-// Nom du fichier: login.php
-// Projet: Ymusic
-// Version: 1.0
-// Description: Ce fichier permet de se connecter à la page d'acceuil
-// Auteur: Mayssa Hamdaoui
-// Date de création: 22.10.2023
 
 <?php
 // Démarre la session PHP
@@ -72,35 +66,36 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
         <!-- Formulaire de connexion -->
         <div class="form">
-            <form method="POST" action="">
                 <div class="form_input">
-                    <!-- Champ pour le nom d'utilisateur -->
-                    <label for="username"></label>
-                    <input type="text" placeholder="Nom d'utilisateur ..." name="username" id="username" required>
-                    <br/>
-                    <!-- Champ pour le mot de passe -->
-                    <label for="password"></label>
-                    <input type="password" placeholder="Mot de passe ..." name="password" id="password" required>
-                    <br/>
-                    <!-- Bouton de soumission du formulaire -->
-                    <div class="button">
-                        <button  type="submit" name="submit">Log In</button>
-                    </div>
-                    <!-- Divider et bouton d'inscription -->
-                    <div class="divider">
-                        <div class="divider-line"></div>
-                        <p class="p">ou</p>
-                        <div class="divider-line"></div>
-                    </div>
-                    <div class="button_inscription">
-                        <button type="button" onclick="window.location.href='sign.php'">Sign Up</button>
-                    </div>
-                    <!-- Lien vers la récupération du mot de passe -->
-                    <div class="motdepasse">
-                        <a href="forgot.php">Mot de passe oublié ?</a>
-                    </div>
-                </div>
-            </form>
+                    <div id="messageDiv" style="display: none;"></div> 
+                    <form method="POST" action="">
+                        <div class="input_shadow">
+                            <!-- Champ pour le nom d'utilisateur -->
+                            <input type="text" placeholder="Nom d'utilisateur ..." name="username" id="username" required>
+                            <br/>
+                            <!-- Champ pour le mot de passe -->
+                            <input type="password" placeholder="Mot de passe ..." name="password" id="password" required>
+                            <br/>
+                        </div>
+                        <!-- Bouton de soumission du formulaire -->
+                        <div class="button">
+                            <button  type="submit" name="submit">Log In</button>
+                        </div>
+                        <!-- Divider et bouton d'inscription -->
+                        <div class="divider">
+                            <div class="divider-line"></div>
+                            <p class="p">ou</p>
+                            <div class="divider-line"></div>
+                        </div>
+                        <div class="button_inscription">
+                            <button type="button" onclick="window.location.href='sign.php'">Sign Up</button>
+                        </div>
+                        <!-- Lien vers la récupération du mot de passe -->
+                        <div class="motdepasse">
+                            <a href="forgot.php">Mot de passe oublié ?</a>
+                        </div>
+                </form>
+            </div>
         </div>
     </div>
 
