@@ -16,14 +16,42 @@
 <body>
     <header>
         <nav class="nav">
+
             <div class="logo">
                 <button class="btn_accueil">
                     <a href="page_accueil.php">
-                        <img src="Assets/logo.jpg" alt="Logo Site Y'music">
+                        <img class="logopng" src="../Assets/logo.png" alt="Logo Site Y'music">
                     </a>
                 </button>
             </div>
-
+            <div class="Accueil">
+                <button class="btn_accueil">
+                    <a href="page_accueil.php" style="text-decoration: none;">
+                        <p class="Accueil2">ACCUEIL</p>
+                    </a>
+                </button>
+            </div>
+            <div class="a_propos">
+                <button class="btn_accueil">
+                    <a href="page_accueil.php" style="text-decoration: none;">
+                        <p class="a_propos2">A PROPOS</p>
+                    </a>
+                </button>
+            </div>
+            <div class="ticket">
+                <button class="btn_accueil">
+                    <a href="page_accueil.php" style="text-decoration: none;">
+                        <p class="ticket2">TICKET</p>
+                    </a>
+                </button>
+            </div>
+            <div class="contact">
+                <button class="btn_accueil">
+                    <a href="page_accueil.php" style="text-decoration: none;">
+                        <p class="contact2">CONTACT</p>
+                    </a>
+                </button>
+            </div>
 
             <div class="search-box">
                 <input class="search-txt" type="text" name="" placeholder="Rechercher ici...">
@@ -62,7 +90,7 @@
                     <div class="card">
                         <div class="content-card">
                             <div class="festi_pic1">
-                                <img class="pic1" src="Assets/quokka.jpg">
+                                <img class="pic1" src="../Assets/image_accueil2.jpg">
                             </div>
                         </div>
                     </div>
@@ -70,7 +98,7 @@
                     <div class="card2">
                         <div class="content-card">
                             <div class="festi_pic2">
-                                <img class="pic2" src="Assets/quokka2.jpg">
+                                <img class="pic2" src="../Assets/image_accueil3.jpg">
                             </div>
                         </div>
                     </div>
