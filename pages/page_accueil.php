@@ -113,8 +113,25 @@
                         </div>
                     </div>
 
-
        </div>
+
+       <div class="feed">
+            <div class="image_feed">
+                <img class="image_feed2" src="../Assets/image_accueil1.jpg" alt="image feed">
+            </div>
+            <div class="like"></div>
+            <div class="comment"></div>
+            <div class="share"></div>
+
+            <div class="comment2">
+                <h1 class="comment_title">Commentaires</h1>
+            </div>
+
+
+
+            <div class="vide"></div>
+       </div>
+
 
     </main>
 </body>
