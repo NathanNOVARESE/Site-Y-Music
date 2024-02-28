@@ -28,8 +28,18 @@ try {
         $confpassword = $_POST['confpassword'];
         $profile_picture = $_FILES['profile_picture']['tmp_name'];
 
-        // Convertir l'image en base64 pour stockage dans la base de données
-        $imgContent = file_get_contents($profile_picture);
+        // Si aucune image n'est téléchargée, utiliser l'image par défaut
+        if (empty($profile_picture)) {
+            $defaultImagePath = 'profile.png';
+            $imgContent = file_get_contents($defaultImagePath);
+            $format = pathinfo($defaultImagePath, PATHINFO_EXTENSION);
+        } else {
+            // Récupération du contenu de l'image téléchargée
+            $imgContent = file_get_contents($profile_picture);
+            $format = pathinfo($profile_picture, PATHINFO_EXTENSION);
+        }
+
+        // Encodage de l'image en base64
         $imgBase64 = base64_encode($imgContent);
 
         // Vérification de la correspondance des mots de passe

@@ -22,8 +22,8 @@ html,body {
 }
 
 .image {
-    margin-right: 2rem; /* Marge à gauche */
-    margin-left: 20rem; /* Marge à droite */
+    margin-right: 3rem; /* Marge à gauche */
+    margin-left: 10rem; /* Marge à droite */
 }
 
 .image img {
@@ -32,14 +32,15 @@ html,body {
     display: block;
     border-radius: 5px;
     margin: 0 auto;
+    transition: transform 0.5s ease; /* Animation de transition en douceur */
 }
 
 .form {
     position: relative;
     background-color: #ffffff;
     border-radius: 15px;
-    height: 400px; /* Taille fixe du formulaire */
-    width: 350px; /* Taille fixe du formulaire */
+    height: 80%; /* Taille fixe du formulaire */
+    width: 60vh; /* Taille fixe du formulaire */
     overflow: hidden;
     flex-grow: 1;
     margin-left: 1rem; /* Marge à gauche */
@@ -53,15 +54,21 @@ html,body {
 
 .form_input label,
 .form_input input {
-    width: 90%;
-    height: 50px; /* Taille fixe des éléments de formulaire */
-    margin-bottom: 10px;
+    width: 80%;
+    height: 8vh; /* Taille fixe des éléments de formulaire */
+    margin-top: 10%;
+}
+
+.input_shadow label,
+.input_shadow input{
+    box-shadow: 0px 0px 3px rgb(46, 43, 43);
+    margin-bottom: 10%;
 }
 
 .form_input {
     width: 100%;
     height: 70px; /* Taille fixe du conteneur de formulaire */
-    margin-top: 15px;
+    margin-top: 10px;
     align-items: center;
     text-align: center;
     justify-content: center;
@@ -71,10 +78,10 @@ html,body {
 
 .button button,
 .button_inscription button {
-    width: 94%;
-    height: 50px; /* Taille fixe des boutons */
+    width: 80%;
+    height: 8vh; /* Taille fixe des boutons */
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: #000000;
     color: #ffffff;
     font-size: 20px; /* Taille fixe de la police */
@@ -96,8 +103,8 @@ html,body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .divider-line {
@@ -115,9 +122,13 @@ html,body {
 }
 
 button:hover{
-    background-color: rgb(34, 33, 36);
+    background-color: rgb(238, 158, 234);
     color: #000000;
     border: 1px solid #000000;
+}
+
+.image img:hover{
+    transform: rotate(360deg); /* Rotation de 360 degrés lors du survol */
 }
 
 .motdepasse a{

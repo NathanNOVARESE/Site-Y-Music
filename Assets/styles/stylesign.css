@@ -1,80 +1,143 @@
-/* Styles généraux */
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-family: Arial, sans-serif;
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
+
+html,body {
+    position: relative;
+    min-height: 100vh;
     background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .container {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin: auto;
-
-}
-
-/* Styles pour l'élément d'image */
-.image {
-    width: 50%;
-    display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100vh;
+    font-size: 16px; /* Taille de base */
 }
 
-.image .logo {
-    width: 80%;
+.image {
+    margin-right: 3rem; /* Marge à gauche */
+    margin-left: 10rem; /* Marge à droite */
+}
+
+.image img {
+    width: 700px; /* Taille fixe de l'image */
     height: auto;
+    display: block;
+    border-radius: 5px;
+    margin: 0 auto;
+    transition: transform 0.5s ease; /* Animation de transition en douceur */
 }
 
 .form {
-    margin-top: 10%;
-    border-radius: 5%;
-    background-color: rgb(255, 255, 255);
-    width: 40%;
-    height: 30%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 15px;
+    height: 80%; /* Taille fixe du formulaire */
+    width: 60vh; /* Taille fixe du formulaire */
+    overflow: hidden;
+    flex-grow: 1;
+    margin-left: 1rem; /* Marge à gauche */
 }
 
-.form .form_input {
+.container {
+    font-size: 1.5rem; /* Taille de police */
+    font-weight: 700;
+    margin-bottom: 1.25rem; /* Marge basse */
+}
+
+.form_input label,
+.form_input input {
     width: 80%;
+    height: 5vh; /* Taille fixe des éléments de formulaire */
+    margin-bottom: 10px;
 }
 
-.form input {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
+.input_shadow label,
+.input_shadow input{
+    box-shadow: 0px 0px 3px rgb(46, 43, 43);
 }
 
-.form button {
+.form_input {
     width: 100%;
-    padding: 10px;
-    border: none;
+    height: 70px; /* Taille fixe du conteneur de formulaire */
+    margin-top: 15px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
     border-radius: 5px;
-    color: white;
-    background-color: rgb(0, 0, 0);
-    margin-bottom: 10px;
+    flex-direction: column;
+}
+
+.button button,
+.button_inscription button {
+    width: 80%;
+    height: 8vh; /* Taille fixe des boutons */
+    border: none;
+    border-radius: 10px;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 20px; /* Taille fixe de la police */
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.p {
+    margin-top: 0;
+    font-size: 20px; /* Taille fixe de la police */
+    font-weight: 400;
+    height: 50px; /* Taille fixe des éléments de paragraphe */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .divider {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
-.divider .divider-line {
+.divider-line {
     flex-grow: 1;
+    width: 1px;
     height: 1px;
     background-color: #000;
+    line-height: 0;
+    font-size: 0;
+    margin: 0 20px;
 }
 
-.divider .p {
-    margin: 0 10px;
+.p {
+    margin: 0 2px; /* Ajustement pour centrer le mot "ou" */
+}
+
+button:hover{
+    background-color: rgb(238, 158, 234);
+    color: #000000;
+    border: 1px solid #000000;
+}
+
+
+.motdepass{
+    margin-top: 0;
+    font-size: 20px; /* Taille fixe de la police */
+    font-weight: 400;
+    height: 50px; /* Taille fixe des éléments de paragraphe */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+}
+
+.image img:hover{
+    transform: rotate(360deg); /* Rotation de 360 degrés lors du survol */
 }

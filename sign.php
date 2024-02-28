@@ -6,7 +6,7 @@
     <title>Inscription</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link type="text/css" href="/Assets/styles/stylesign.css" rel="stylesheet">
+    <link type="text/css" href="../Assets/styles/stylesign.css" rel="stylesheet">
     <link rel="icon" href="icon.png">
 </head>
 
@@ -24,19 +24,21 @@
                     <!-- Champ pour télécharger une photo de profil -->
                     <input type="file" name="profile_picture">
                     <br />
-                    <!-- Champs pour les informations utilisateur -->
-                    <input type="text" name="firstname" placeholder="First Name" required>
-                    <br />
-                    <input type="text" name="lastname" placeholder="Last Name" required>
-                    <br />
-                    <input type="text" name="username" placeholder="Username" required>
-                    <br />
-                    <input type="email" name="email" placeholder="Email" required>
-                    <br />
-                    <input type="password" name="password" placeholder="Password" required>
-                    <br />
-                    <input type="password" name="confpassword" placeholder="Confirm Password" required>
-                    <br />
+                    <div class="input_shadow">
+                        <!-- Champs pour les informations utilisateur -->
+                        <input type="text" name="firstname" placeholder="First Name" required>
+                        <br />
+                        <input type="text" name="lastname" placeholder="Last Name" required>
+                        <br />
+                        <input type="text" name="username" placeholder="Username" required>
+                        <br />
+                        <input type="email" name="email" placeholder="Email" required>
+                        <br />
+                        <input type="password" name="password" placeholder="Password" required>
+                        <br />
+                        <input type="password" name="confpassword" placeholder="Confirm Password" required>
+                        <br />
+                    </div>
                     <!-- Bouton pour soumettre le formulaire -->
                     <div class="button">
                         <button type="submit" name="submit">Sign In</button>
