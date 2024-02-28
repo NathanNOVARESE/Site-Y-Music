@@ -29,12 +29,46 @@
             <div class="logo">
                 <button class="btn_accueil">
                     <a href="page_accueil.php">
-                        <img src="Assets/logo.jpg" alt="Logo Site Y'music">
+                        <img class="logopng" src="../logo.png" alt="Logo Site Y'music">
                     </a>
                 </button>
             </div>
+
+            <div class="Accueil">
+                <button class="btn_accueil2">
+                    <a style="text-decoration:none" href="page_accueil.php">
+                        <p class="Accueil2">ACCUEIL</p>
+                    </a>
+                </button>
+            </div>
+
+            <div class="a_propos">
+                <button class="btn_accueil2">
+                    <a style="text-decoration:none" href="page_accueil.php">
+                        <p class="a_propos2">A PROPOS</p>
+                    </a>
+                </button>
+            </div>
+
+            <div class="ticket">
+                <button class="btn_accueil2">
+                    <a style="text-decoration:none" href="page_accueil.php">
+                        <p class="ticket2">TICKET</p>
+                    </a>
+                </button>
+            </div>
+
+            <div class="contact">
+                <button class="btn_accueil2">
+                    <a style="text-decoration:none" href="page_accueil.php">
+                        <p class="contact2">CONTACT</p>
+                    </a>
+                </button>
+            </div>
+
+
             <div class="search-box">
-                <input class="search-txt" type="text" name="" placeholder="Search...">
+                <input class="search-txt" type="text" name="" placeholder="Rechercher ici...">
                 <a class="search-btn" href="#">
                     <i class="fas fa-search"></i>
                 </a>
@@ -51,45 +85,26 @@
                 </svg>
             </button>
         </nav>
+
+        
     </header>
 
     <main>
+        <div class=greybar></div>
 
-        <div class="div-actu">
-            <h1 class="text-actu">Actualités</h1>
+        <img class="barre" src="../Assets/barre.png" alt="barre">
+
+        <div class="presentation">
+            <p class="presentation_ecriture"> <strong>Y'Music, qu'est-ce que c'est ?</strong> Y'Music est une plateforme de rencontre permettant aux utilisateurs de participer à des concerts hors du commun tout en faisant de belles rencontres ! </p>
         </div>
 
-        <div class="rond">
 
-        </div>
 
-        <div class="scroll-bg">
-            <div class="scroll-div">
-                <div class="scroll-object">
-
-                    <div class="festi_name">
-                        <p>Nom Festival</p>
-                    </div>
-
-                    <div class="festi_text">
-                        <p class="festi_text_1">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi labore eius alias quidem
-                            velit totam ex deleniti expedita. Architecto cum possimus aliquam ut ipsam magni recusandae
-                            iure dolore. Modi voluptate eius consectetur? Adipisci fugiat reprehenderit exercitationem,
-                            nam delectus autem perspiciatis rem, unde aliquam facilis at, dolor non illum amet fuga
-                            cupiditate tempore natus voluptatibus magnam. Libero placeat, asperiores molestias, eligendi
-                            provident officiis ducimus optio temporibus itaque ea ipsa, numquam aliquam. Sapiente
-                            quibusdam, vitae repudiandae delectus rerum, et deserunt minus iusto consectetur, minima optio
-                            eligendi recusandae cumque odit error placeat. Fuga quisquam officia ex blanditiis nam modi
-                            cum quae voluptates veritatis.
-                        </p>
-                    </div>
 
                     <div class="card">
                         <div class="content-card">
-
                             <div class="festi_pic1">
-                                <img class="pic1" src="Assets/quokka.jpg">
+                                <img class="pic1" src="../Assets/image_accueil2.jpg" alt="image de l'accueil">
                             </div>
                         </div>
                     </div>
@@ -97,18 +112,13 @@
                     <div class="card2">
                         <div class="content-card">
                             <div class="festi_pic2">
-                                <img class="pic2" src="Assets/quokka2.jpg">
+                                <img class="pic2" src="../Assets/image_accueil3.jpg" alt="image de l'accueil">
                             </div>
                         </div>
                     </div>
 
-                </div>
-            </div>
-        </div>
 
-        <div class="white-gradiant">
-
-        </div>
+       </div>
 
     </main>
 </body>
