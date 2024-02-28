@@ -16,9 +16,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="page_accueil.css">
+    <link rel="stylesheet" href="../Assets/styles/page_accueil.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <script src="page_accueil.js" defer></script>
+    <script src="../includes/page_accueil.js" defer></script>
 
     <title>Page d'Accueil</title>
 </head>
