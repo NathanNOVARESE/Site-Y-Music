@@ -100,12 +100,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
 
     <?php
-    // Affiche le message de connexion ou d'erreur
-    if(isset($error_message)) {
-        echo $error_message;
-    } else {
-        echo $signupMessage;
-    }
+        // Affiche le message de connexion ou d'erreur
+        if(isset($error_message)) {
+            echo $error_message;
+        } else {
+            echo $signupMessage;
+        }
     ?>
 </body>
 </html>

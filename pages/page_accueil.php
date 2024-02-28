@@ -1,14 +1,4 @@
-<?php
-  session_start();
-
-  // Vérifiez d'abord s'il y a un message de statut de l'inscription dans l'URL
-  if (isset($_GET['signup_message'])) {
-      $signupMessage = $_GET['signup_message'];
-      
-      // Affichez le message de statut (succès ou échec) ici où vous le souhaitez dans votre page
-      echo "<p>$signupMessage</p>";
-  }
-?>
+<?php require('securityAction.php');?>
 
 <!DOCTYPE html>
 <html lang="fr">
