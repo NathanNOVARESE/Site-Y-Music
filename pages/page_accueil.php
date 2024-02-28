@@ -83,10 +83,6 @@
         <div class="presentation">
             <p class="presentation_ecriture"> <strong>Y'Music, qu'est-ce que c'est ?</strong> Y'Music est une plateforme de rencontre permettant aux utilisateurs de participer à des concerts hors du commun tout en faisant de belles rencontres ! </p>
         </div>
-
-
-
-
                     <div class="card">
                         <div class="content-card">
                             <div class="festi_pic1">
