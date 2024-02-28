@@ -313,6 +313,76 @@ main .presentation .presentation_ecriture{
 }
 
 
+main .feed{
+  position: absolute;
+  width: 45rem;
+  height: 50rem;
+  left: 2rem;
+  border: 8px black solid;
+  overflow: scroll;
+}
+
+main .feed .image_feed{
+  width: 44rem;
+  height: 20rem;
+  border: 8px black solid;
+  overflow: hidden;
+  
+}
+
+main .image_feed2{
+  width: 44rem;
+  height: 30rem;
+  margin-top: -5rem;
+}
+
+main .feed .like{
+  position: absolute;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-top: 1.4rem;
+  margin-left: 1rem;
+  border: 8px solid black;
+}
+
+main .feed .comment{
+  position: absolute;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-top: 1.4rem;
+  margin-left: 5.5rem;
+  border: 8px solid black;
+}
+main .feed .share{
+  position: absolute;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-top: 1.4rem;
+  margin-left: 10rem;
+  border: 8px solid black;
+}
+
+main .feed .comment2{
+  position: absolute;
+  width: 35rem;
+  height: 30rem;
+  border: solid 8px black;
+  margin-top: 7rem;
+  margin-left: 1rem;
+}
+
+main .comment_title{
+  font-size: 24px;
+}
+
+main .vide {
+  position: absolute;
+  margin-top: 500rem;
+  width: 1rem;
+  height: 1rem;
+}
+
+
 
 
 
