@@ -1,13 +1,4 @@
-/*
-
-*Nom du fichier: setting_user.php
-*Projet: Ymusic
-*Version: 1.0
-*Description: Ce fichier permet de se modifier les paramètres de l'utilisateur
-*Auteur: Mayssa Hamdaoui
-*Date de création: 18.12.2023
-
-*/
+<?php require('securityAction.php');?>
 
 <?php
 // Initialiser la session

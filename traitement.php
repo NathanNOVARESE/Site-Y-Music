@@ -1,11 +1,4 @@
 
-//Nom du fichier: traitement.php
-//Projet: Ymusic
-//Version: 1.0
-//Description: Ce fichier permet de se créer un compte
-//Auteur: Mayssa Hamdaoui
-//Date de création: 22.10.2023
-
 <?php
 session_start();
 $signupMessage = '';
@@ -30,7 +23,7 @@ try {
 
         // Si aucune image n'est téléchargée, utiliser l'image par défaut
         if (empty($profile_picture)) {
-            $defaultImagePath = 'profile.png';
+            $defaultImagePath = '/Assets/profile.png';
             $imgContent = file_get_contents($defaultImagePath);
             $format = pathinfo($defaultImagePath, PATHINFO_EXTENSION);
         } else {
