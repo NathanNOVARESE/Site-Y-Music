@@ -1,63 +1,53 @@
-<?php require('securityAction.php');?>
-
 <?php
-// Initialiser la session
-session_start();
+    require('securityAction.php');
+    // Connectez-vous à votre base de données et récupérez les informations de l'utilisateur
+    $signupMessage = '';
+    $servername = "localhost";
+    $username = "root";
+    $password = "BbREe5uP@oZNc@@Z";
+    $dbname = "utilisateur";
 
-// Vérifiez si l'utilisateur est connecté, sinon redirigez-le vers la page de connexion
-if (!isset($_SESSION["username"])) {
-    header("Location: ../login.php");
-    exit();
-}
+    try {
+        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-// Connectez-vous à votre base de données et récupérez les informations de l'utilisateur
-$signupMessage = '';
-$servername = "localhost";
-$username = "root";
-$password = "BbREe5uP@oZNc@@Z";
-$dbname = "utilisateur";
-
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    // Récupérez les informations de l'utilisateur à partir de la base de données
-    $query = $conn->prepare("SELECT * FROM users WHERE username = :username");
-    $query->bindParam(':username', $_SESSION["username"]);
-    $query->execute();
-    $row = $query->fetch(PDO::FETCH_ASSOC);
-
-    if (!$row) {
-        header('Location: ../login.php');
-        exit();
-    }
-
-    // Traitement de la mise à jour des informations de l'utilisateur après la soumission du formulaire
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $new_lastname = $_POST['new_lastname'];
-        $new_username = $_POST['new_username'];
-        $new_email = $_POST['new_email'];
-        $new_firstname = $_POST['new_firstname'];
-
-        // Requête de mise à jour
-        $updateQuery = $conn->prepare("UPDATE users SET lastname=:lastname, username=:username, email=:email, firstname=:firstname WHERE id=:user_id");
-        $updateQuery->bindParam(':lastname', $new_lastname);
-        $updateQuery->bindParam(':username', $new_username);
-        $updateQuery->bindParam(':email', $new_email);
-        $updateQuery->bindParam(':firstname', $new_firstname);
-        $updateQuery->bindParam(':user_id', $row['id']);
-        $updateQuery->execute();
-
-        // Mettez à jour les variables de session avec les nouvelles données
-        $_SESSION['username'] = $new_username;
-
-        // Rafraîchir les données de l'utilisateur après la mise à jour
+        // Récupérez les informations de l'utilisateur à partir de la base de données
+        $query = $conn->prepare("SELECT * FROM users WHERE username = :username");
+        $query->bindParam(':username', $_SESSION["username"]);
         $query->execute();
         $row = $query->fetch(PDO::FETCH_ASSOC);
+
+        if (!$row) {
+            header('Location: ../login.php');
+            exit();
+        }
+
+        // Traitement de la mise à jour des informations de l'utilisateur après la soumission du formulaire
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $new_lastname = $_POST['new_lastname'];
+            $new_username = $_POST['new_username'];
+            $new_email = $_POST['new_email'];
+            $new_firstname = $_POST['new_firstname'];
+
+            // Requête de mise à jour
+            $updateQuery = $conn->prepare("UPDATE users SET lastname=:lastname, username=:username, email=:email, firstname=:firstname WHERE id=:user_id");
+            $updateQuery->bindParam(':lastname', $new_lastname);
+            $updateQuery->bindParam(':username', $new_username);
+            $updateQuery->bindParam(':email', $new_email);
+            $updateQuery->bindParam(':firstname', $new_firstname);
+            $updateQuery->bindParam(':user_id', $row['id']);
+            $updateQuery->execute();
+
+            // Mettez à jour les variables de session avec les nouvelles données
+            $_SESSION['username'] = $new_username;
+
+            // Rafraîchir les données de l'utilisateur après la mise à jour
+            $query->execute();
+            $row = $query->fetch(PDO::FETCH_ASSOC);
+        }
+    } catch (PDOException $e) {
+        echo "Erreur : " . $e->getMessage();
     }
-} catch (PDOException $e) {
-    echo "Erreur : " . $e->getMessage();
-}
 ?>
 
 <!DOCTYPE html>

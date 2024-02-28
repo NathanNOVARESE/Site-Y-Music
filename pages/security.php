@@ -1,13 +1,3 @@
-/*
-
-*Nom du fichier: security.php
-*Projet: Ymusic
-*Version: 1.0
-*Description: Ce fichier permet de se modifier les paramètres de sécurité de l'utilisateur
-*Auteur: Mayssa Hamdaoui
-*Date de création: 20.01.2023
-
-*/
 
 <?php
 // Initialiser la session

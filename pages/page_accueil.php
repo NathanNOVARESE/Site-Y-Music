@@ -1,4 +1,3 @@
-<?php require('securityAction.php');?>
 
 <!DOCTYPE html>
 <html lang="fr">
