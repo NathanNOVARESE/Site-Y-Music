@@ -8,7 +8,7 @@ body{
   overflow: hidden;
 }
 
-/* Barre navigation + Début Header */
+/* Barre navigation */
 header .nav {
   background-color: #FFFFFF;
   z-index: 2;
@@ -77,6 +77,7 @@ header .nav .nav-list .rect{
 }
 
 
+
 header .nav .btn{
   background: transparent;
   border: 2px solid #8975D1;
@@ -115,7 +116,6 @@ header .btn_accueil{
 }
 
 /* Search Bar*/
-
 header .nav .search-box{
   position: absolute;
   top: 50%;
@@ -160,7 +160,7 @@ header .nav .search-txt{
   
 }
 
-/* Fin du header */
+
 
 main{
   min-height: 20rem;
@@ -168,6 +168,15 @@ main{
   align-items: center;
   justify-content: center;
 }
+
+.image_fond {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(5px);
+  opacity: 1;
+  }
 
 /* Rectangle actualités */
 
@@ -190,8 +199,7 @@ main .text-actu{
   text-align: center;
 }
 
-/* Page actualité -- BASE */
-
+/* Page actualité -- BASE*/
 main .scroll-bg{
   z-index: 1;
   background: aqua;
@@ -213,7 +221,6 @@ main .scroll-div{
 }
 
 /* Le rond, voilà */
-
 .rond{
   position: absolute;
   background-color: aliceblue;
@@ -224,15 +231,15 @@ main .scroll-div{
 }
 
 /* Rectangle intérieur */
-
 main .festi_name{
   background-color: rgba(0, 0, 0, 0.463);
   border: 5px solid black;
   border-radius: 1.5rem 0rem 0rem 1.5rem;
-  height: 7rem;
+  height: 5rem;
   width: 100%;
   position: absolute;
   text-align: center;
+  padding: 0.8rem;
   font-size: 35px;
   color: white;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -247,18 +254,18 @@ main .festi_text{
   border: 5px solid black;
   border-radius: 1.5rem;
   margin-top: 10rem;
-  margin-left: 1.8rem;
+  margin-left: 1.3rem;
   height: 35rem;
   width: 30rem;
   position: absolute;  
 }
 
 
-/* Début carte 3D */
+
 
 .card{
   width: 20rem;
-  height: 24rem;
+  height: 28rem;
   transform: translate(33rem,8rem);
   perspective: 500px;
   border-radius: 1.5rem;
@@ -281,14 +288,13 @@ main .festi_text{
 
 .card2{
   width: 20rem;
-  height: 24.2rem;
+  height: 13.8rem;
   transform: translate(55rem,-4rem);
   perspective: 500px;
   border-radius: 1.5rem;
   border: 5px solid black;
 }
 
-/* Fin carte 3D */
 
 
 
@@ -304,6 +310,20 @@ main .festi_text:hover{
   background-color: rgba(0, 0, 0, 0.741);
 }
 
+.text_li {
+  list-style: none;
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  padding: 0.5rem;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  padding: 0.5rem;
+}
 
 
 
@@ -330,6 +350,7 @@ main .scroll-text{
   border-radius: 1.5rem;
 }
 
+
 ::-webkit-scrollbar-thumb{
   background: linear-gradient(#642bff81,#ff22e57e);
   border-radius: 1.5rem;
@@ -344,8 +365,8 @@ main .scroll-text{
 main .white-gradiant{
   height: 100rem;
   z-index: 0;
-  width: 8%;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.768), rgba(255, 255, 255, 0.412), rgba(255, 255, 255, 0.067));
+  width: 15%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.768), rgba(255, 255, 255, 0.520), rgba(255, 255, 255, 0.107), rgba(255, 255, 255, 0.019));
   position: absolute;
   left: 0px;
 }
