@@ -71,14 +71,13 @@
                 </svg>
             </button>
         </nav>
+        <div class=greybar></div>
 
-        
+        <img class="barre" src="../Assets/barre.png" alt="barre">        
     </header>
 
     <main>
-        <div class=greybar></div>
 
-        <img class="barre" src="../Assets/barre.png" alt="barre">
 
         <div class="presentation">
             <p class="presentation_ecriture"> <strong>Y'Music, qu'est-ce que c'est ?</strong> Y'Music est une plateforme de rencontre permettant aux utilisateurs de participer à des concerts hors du commun tout en faisant de belles rencontres ! </p>
