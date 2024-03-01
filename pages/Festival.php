@@ -11,17 +11,47 @@
 </head>
 
 <body>
-    <header>
+<header>
         <nav class="nav">
+
             <div class="logo">
                 <button class="btn_accueil">
                     <a href="page_accueil.php">
-                        <img src="../Assets/logo.jpg" alt="Logo Site Y'music">
+                        <img class="logopng" src="../Assets/logo.png" alt="Logo Site Y'music">
                     </a>
                 </button>
             </div>
+            <div class="Accueil">
+                <button class="btn_accueil">
+                    <a href="page_accueil.php" style="text-decoration: none;">
+                        <p class="Accueil2">ACCUEIL</p>
+                    </a>
+                </button>
+            </div>
+            <div class="a_propos">
+                <button class="btn_accueil">
+                    <a href="page_accueil.php" style="text-decoration: none;">
+                        <p class="a_propos2">A PROPOS</p>
+                    </a>
+                </button>
+            </div>
+            <div class="ticket">
+                <button class="btn_accueil">
+                    <a href="page_accueil.php" style="text-decoration: none;">
+                        <p class="ticket2">TICKET</p>
+                    </a>
+                </button>
+            </div>
+            <div class="contact">
+                <button class="btn_accueil">
+                    <a href="page_accueil.php" style="text-decoration: none;">
+                        <p class="contact2">CONTACT</p>
+                    </a>
+                </button>
+            </div>
+
             <div class="search-box">
-                <input class="search-txt" type="text" name="" placeholder="Search...">
+                <input class="search-txt" type="text" name="" placeholder="Rechercher ici...">
                 <a class="search-btn" href="#">
                     <i class="fas fa-search"></i>
                 </a>
@@ -38,6 +68,10 @@
                 </svg>
             </button>
         </nav>
+
+        <div class=greybar></div>
+
+        <img class="barre" src="../Assets/barre.png" alt="barre">        
     </header>
 
     <main>
