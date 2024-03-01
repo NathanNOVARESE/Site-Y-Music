@@ -44,6 +44,10 @@
         <div class="Festival">
             <h1>Festival</h1>
         </div>
+        <div class="post">
+            <h1>Post</h1>
+        </div>
+
 
         <!-- Divisions for North, South, East, West -->
 
