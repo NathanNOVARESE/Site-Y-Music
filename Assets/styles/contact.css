@@ -277,88 +277,96 @@ header .festival{
   
   /* Fin header */
 
-  /* Début main */
+  /* Début Main */
 
-main .style {
+  main .telephone {
     position: absolute;
-    margin-top: 1.5rem;
-    margin-left: 1.5rem;
-    height: 10rem;
-    width: 25rem;
+    width: 20rem;
+    height: 5rem;
+    margin-left: 25rem;
+    margin-top: 5rem;
     background-color: rgb(212, 212, 212);
     box-shadow: 10px 10px 5px rgb(137, 137, 137);
-}
+  }
 
-main .artiste{
-    position: absolute;
-    margin-top: 13.5rem;
-    margin-left: 1.5rem;
-    height: 10rem;
-    width: 25rem;
-    background-color: rgb(212, 212, 212);
-    box-shadow: 10px 10px 5px rgb(137, 137, 137);;
-}
-
-main .tchat{
-    position: absolute;
-    margin-top: 25.5rem;
-    margin-left: 1.5rem;
-    height: 10rem;
-    width: 58rem;
-    background-color: rgb(212, 212, 212);
-    box-shadow: 10px 10px 5px rgb(137, 137, 137);;
-}
-
-main .nom_festi{
-    position: absolute;
-    margin-top: 0.5rem;
-    right: 1.5rem;
-    height: 3rem;
-    width: 30rem;
-    background-color: rgb(212, 212, 212);
-    box-shadow: 10px 10px 5px rgb(137, 137, 137);;
-}
-
-main .nom_festi_text {
-    position: relative;
+  main .telephone_text {
     text-align: center;
-    top: 0.5rem;
-}
+  }
 
-main .carte_festi{
+  main .e-mail {
     position: absolute;
-    margin-top: 5.5rem;
-    right: 1.5rem;
-    height: 17rem;
-    width: 30rem;
+    width: 20rem;
+    height: 5rem;
+    margin-left: 25rem;
+    margin-top: 12rem;
     background-color: rgb(212, 212, 212);
-    box-shadow: 10px 10px 5px rgb(137, 137, 137);;
-}
+    box-shadow: 10px 10px 5px rgb(137, 137, 137);
+  }
+  main .e-mail_text{
+    text-align: center;
+  }
+  main .reseau {
+    position: absolute;
+    width: 20rem;
+    height: 5rem;
+    right: 25rem;
+    margin-top: 5rem;
+    background-color: rgb(212, 212, 212);
+    box-shadow: -10px 10px 5px rgb(137, 137, 137);
+  }
+  main .reseau_text {
+    text-align: center;
+  }
+  main .adresse {
+    position: absolute;
+    width: 20rem;
+    height: 5rem;
+    right: 25rem;
+    margin-top: 12rem;
+    background-color: rgb(212, 212, 212);
+    box-shadow: -10px 10px 5px rgb(137, 137, 137);
+  }
 
-main .carte_festi_placement {
+  main .adresse_text{
+    text-align: center;
+  }
+
+  main .set{
+    position: absolute;
+    top: -1.8rem;
+    left: -16rem;
+  }
+
+  main .set2{
+    position: absolute;
+    top: -1.5rem;
+    left: -16rem;
+  }
+
+  main .set3 {
+    position: absolute;
+    top: -6.8rem;
+    left: -18rem;
+  }
+
+  main .set4{
+    position: absolute;
+    top: -2rem;
+    left: -16rem;
+  }
+
+  main .maps {
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    bottom: 0rem;
+    background-color: gray;
+    overflow: hidden;
+  }
+
+  main .maps_pos {
     width: 100%;
     height: 100%;
-}
-
-main .lien_billet{
-    position: absolute;
-    margin-top: 24.5rem;
-    right: 1.5rem;
-    height: 3rem;
-    width: 30rem;
-    background-color: rgb(212, 212, 212);
-    box-shadow: 10px 10px 5px rgb(137, 137, 137);
-}
-
-main .lien_billet_text{
-    position: absolute;
-    font-size: 25px;
-    text-decoration: none;
-    top: 0.6rem;
-}
-
-main h1 {
-    font-size: 25px;
-}
-
+  }
+  
   /* Fin Main */

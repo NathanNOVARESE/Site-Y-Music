@@ -318,10 +318,11 @@ header .barre{
 
 main .presentation {
   position: absolute;
-  border: 8px black solid ;
   width: 27rem;
   height: 15rem;
   transform: translate(60rem, 1.5rem);
+  background-color: rgb(212, 212, 212);
+  box-shadow: 10px 10px 5px rgb(137, 137, 137);
   
 }
 

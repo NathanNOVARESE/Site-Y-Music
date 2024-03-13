@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Assets/styles/page_pres_festival.css">
+    <link rel="stylesheet" href="../Assets/styles/contact.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="../includes/page_accueil.js" defer></script>
 
@@ -76,30 +76,32 @@
     </header>
 
     <main>
-      <div class="style">
-        <h1>Style de musique</h1>
-      </div>
+        <div class="telephone">
+            <img class="set" src="../Assets/set_festival/telephone.png" alt="telephone">
+            <h3 class="telephone_text">Contact par téléphone</h3>
+            <h2 class="telephone_text">+33 00 00 00 00 00</h2>
+        </div>
 
-      <div class="artiste">
-        <h1>Artiste présent</h1>
-      </div>
+        <div class="e-mail">
+            <img class="set2" src="../Assets/set_festival/e-mail.png">
+            <h3 class="e-mail_text">Contact par couriels</h3>
+            <h3 class="e-mail_text">xxxxxxx.xxxxxx@ynov.com</h3>
+        </div>
 
-      <div class="tchat">
-        <h1>Tchat</h1>
-      </div>
+        <div class="reseau">
+            <img class="set3" src="../Assets/set_festival/Réseau.png">
+            <h3 class="reseau_text">Suivez-nous sur nos réseaux</h3>
+        </div>
 
-      <div class="nom_festi">
-        <h1 class="nom_festi_text">Nom Festival</h1>
-      </div>
+        <div class="adresse"> 
+            <img class="set4" src="../Assets/set_festival/maps.png">
+            <h3 class="adresse_text">Nous trouver</h3>
+            <h2 class="adresse_text"> pl Sophie Laffitte,</h2>
+            <h2 class="adresse_text"> 06560 Valbonne </h2>
+        </div>
 
-      <div class="carte_festi" id="map">
-      </div>
-
-      <div class="lien_billet">
-        <a class="lien_billet_text" href="https://openclassrooms.com/fr/">→ Lien vers la billeterie</a>
-      </div>
-
-
+        <div id="map" class="maps">
+        </div>
 
 
     </main>
@@ -112,6 +114,7 @@
         });
     </script>
 
-    <script src="../includes/page_pres_festival.js"></script>
+    <script src="../includes/contact.js"></script>
+
 </body>
 </html>

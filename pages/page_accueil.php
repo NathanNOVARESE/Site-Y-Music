@@ -45,7 +45,7 @@
             </div>
             <div class="contact">
                 <button class="btn_accueil">
-                    <a href="page_accueil.php" style="text-decoration: none;">
+                    <a href="contact.php" style="text-decoration: none;">
                         <p class="contact2">CONTACT</p>
                     </a>
                 </button>
