@@ -43,3 +43,15 @@ card.forEach(applyCardMouseEffect);
 
 const card2 = document.querySelectorAll(".card2");
 card2.forEach(applyCardMouseEffect);
+
+
+const showpost = document.getElementById("show_post");
+const post = document.getElementById("post")
+
+showpost.addEventListener("click", function(){
+    if (post.style.display === "none"){
+        post.style.display = "block";
+    }else{
+        post.style.display = "none";
+    }
+});

@@ -1,3 +1,38 @@
+<?php
+
+require('securityAction.php');
+
+// Vérifiez si l'utilisateur est connecté
+if(isset($_SESSION['username'])) {
+    // Connectez-vous à votre base de données et récupérez les informations de l'utilisateur
+    $servername = "localhost";
+    $username = "root";
+    $password = "BbREe5uP@oZNc@@Z";
+    $dbname = "utilisateur";
+
+    try {
+        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        // Récupérez les informations de l'utilisateur à partir de la base de données en utilisant son nom d'utilisateur
+        $query_user = $conn->prepare("SELECT * FROM users WHERE username = :username");
+        $query_user->bindParam(':username', $_SESSION["username"]);
+        $query_user->execute();
+        $row_user = $query_user->fetch(PDO::FETCH_ASSOC);
+
+        // Vérifiez si l'utilisateur est également un administrateur
+        $query_admin = $conn->prepare("SELECT * FROM administrateurs WHERE utilisateur_id = :utilisateur_id");
+        $query_admin->bindParam(':utilisateur_id', $row_user['id']);
+        $query_admin->execute();
+        $row_admin = $query_admin->fetch(PDO::FETCH_ASSOC);
+
+    } catch(PDOException $e) {
+        echo "Erreur : " . $e->getMessage();
+    }
+} else {
+    echo "Vous devez être connecté pour accéder à cette page.";
+}
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -61,6 +96,7 @@
             <ul class="nav-list">
                 <li class="item"><a href="setting_user.php">Setting</a></li>
                 <li class="item"><a href="Festival.php">Festival</a></li>
+                <li class="item"><a href="log_out.php">Log out</a></li>
             </ul>
             <button class="btn" id="btn">
                 <svg fill="#8975D1" class="hamburger" viewBox="0 0 100 100" width="45">
@@ -100,20 +136,57 @@
        </div>
 
        <div class="feed">
-            <div class="image_feed">
-                <img class="image_feed2" src="../Assets/image_accueil1.jpg" alt="image feed">
-            </div>
-            <div class="like"></div>
-            <div class="comment"></div>
-            <div class="share"></div>
+            <?php
+                if ($row_admin) {
+                    echo '<div class="create-post">
+                            <button id="show_post">Créer un post</button>
+                                <div class="post"  id="post" style ="display: none;">
+                                    <form action="creation_post.php" method="POST" enctype="multipart/form-data">
+                                        <div class="form-group">
+                                            <label for="titre">Titre :</label>
+                                            <input type="text" id="titre" name="titre" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="contenu">Contenu :</label>
+                                            <textarea id="contenu" name="contenu" rows="5" required></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="image">Image :</label>
+                                            <input type="file" id="image" name="image">
+                                        </div>
+                                        <button type="submit">Créer le post</button>
+                                    </form>
+                                </div>
+                            </div>';
+                }
+            ?>
+            <?php
+            // Requête SQL pour sélectionner les posts
+            $query = $conn->query("SELECT * FROM posts ORDER BY date_creation DESC");
+            $posts = $query->fetchAll(PDO::FETCH_ASSOC);
 
-            <div class="comment2">
-                <h1 class="comment_title">Commentaires</h1>
-            </div>
-
-
-
-            <div class="vide"></div>
+            // Affichage des posts
+            foreach ($posts as $post) {
+                echo "<div class='post'>";
+                echo '<div class="image_feed">
+                        <img class="image_feed2" src="">
+                     </div>';
+                if ($post && isset($post['image'])) {
+                    $imageData = $post['image'];
+                    echo '<img src="data:image/jpeg;base64,' . $imageData . '" class="image_feed">';
+                }
+                echo "<h2>" . $post['titre'] . "</h2>"; // Afficher le titre du post
+                echo "<p>" . $post['contenu'] . "</p>"; // Afficher le contenu du post
+                echo '<div class="like"></div>';
+                echo '<div class="comment"></div>';
+                echo '<div class="share"></div>';
+                echo '<div class="billet"></div>';
+                echo '<div class="comment2">
+                        <h1 class="comment_title">Commentaires</h1>
+                    </div>';
+                echo "</div>";
+            }
+            ?>
        </div>
 
 
