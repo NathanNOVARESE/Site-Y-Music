@@ -124,6 +124,29 @@ header .nav .btn .row{
 
 header .btn_accueil{
   border: transparent;
+  background: none;
+}
+
+header .btn_accueil1{
+  border: transparent;
+  background: none;
+}
+
+
+header .btn_accueil::before{
+  content: '';
+  position: absolute;
+  bottom: -0.3rem;
+  left: 0;
+  width: 0%;
+  height: 0.3rem;
+  background-color: rgb(255, 0, 238);
+  transition: all .5s;
+  border-radius: 0.5rem;
+}
+
+header .btn_accueil:hover::before{
+  width: 100%;
 }
 
 /* Search Bar*/
@@ -204,25 +227,21 @@ header .contact{
   border: 8px solid white;
   right: 21rem;
 }
-header .contact2:hover{
-  color: rgb(120, 120, 4);
-}
+
 header .contact2{
   font-size: 1.8rem;
   color: rgb(0, 0, 0);
   font-family: 'Times New Roman', Times, serif;
 }
 
-header .ticket{
+header .festival{
   position: absolute;
-  width: 8.5rem;
+  width: 8.3rem;
   height: 2rem;
   border: 8px solid white;
-  right: 30rem;
+  right: 31rem;
 }
-header .ticket2:hover{
-  color: rgb(120, 120, 4);
-}
+
 header .ticket2{
   font-size: 1.8rem;
   color: rgb(0, 0, 0);
@@ -236,9 +255,7 @@ header .a_propos{
   border: 8px solid white;
   right: 40rem;
 }
-header .a_propos2:hover{
-  color: rgb(120, 120, 4);
-}
+
 
 header .a_propos2{
   font-size: 1.8rem;

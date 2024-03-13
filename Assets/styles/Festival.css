@@ -123,6 +123,27 @@ header .nav .btn .row{
 
 header .btn_accueil{
   border: transparent;
+  background: none;
+}
+header .btn_accueil1{
+  border: transparent;
+  background: none;
+}
+
+header .btn_accueil::before{
+  content: '';
+  position: absolute;
+  bottom: -0.3rem;
+  left: 0;
+  width: 0%;
+  height: 0.3rem;
+  background-color: rgb(255, 0, 238);
+  transition: all .5s;
+  border-radius: 0.5rem;
+}
+
+header .btn_accueil:hover::before{
+  width: 100%;
 }
 
 /* Search Bar*/
@@ -203,25 +224,21 @@ header .contact{
   border: 8px solid white;
   right: 21rem;
 }
-header .contact2:hover{
-  color: rgb(120, 120, 4);
-}
+
 header .contact2{
   font-size: 1.8rem;
   color: rgb(0, 0, 0);
   font-family: 'Times New Roman', Times, serif;
 }
 
-header .ticket{
+header .festival{
   position: absolute;
-  width: 8.5rem;
+  width: 8.3rem;
   height: 2rem;
   border: 8px solid white;
-  right: 30rem;
+  right: 31rem;
 }
-header .ticket2:hover{
-  color: rgb(120, 120, 4);
-}
+
 header .ticket2{
   font-size: 1.8rem;
   color: rgb(0, 0, 0);
@@ -235,9 +252,7 @@ header .a_propos{
   border: 8px solid white;
   right: 40rem;
 }
-header .a_propos2:hover{
-  color: rgb(120, 120, 4);
-}
+
 
 header .a_propos2{
   font-size: 1.8rem;
@@ -348,6 +363,8 @@ main h2 {
   transition: 0.3s;
   background-color: aqua;
   width: 15rem;
+  text-decoration: none; /* Supprimer le soulignement par défaut */
+  color: black; /* Changer la couleur du texte en noir */
 }
 
 .card:hover {
@@ -376,7 +393,7 @@ main .image_fond1 {
 main .Nord_fest {
   position: absolute;
   border: aqua 2px;
-  background-color: rebeccapurple;
+  background-color: rgb(205, 27, 152);
   width: 75rem;
   height: 19rem;
   transform: translate(10rem, 10rem);
@@ -413,7 +430,7 @@ main .image_fond2 {
 main .Sud_fest {
   position: absolute;
   border: aqua 2px;
-  background-color: rebeccapurple;
+  background-color: rgb(205, 27, 152);
   width: 75rem;
   height: 19rem;
   transform: translate(10rem, 41rem);
@@ -445,7 +462,7 @@ main .image_fond3 {
 main .Est_fest {
   position: absolute;
   border: aqua 2px;
-  background-color: rebeccapurple;
+  background-color: rgb(205, 27, 152);
   width: 75rem;
   height: 19rem;
   transform: translate(10rem, 73rem);
@@ -467,7 +484,7 @@ main .image_fond4 {
   z-index: 0;
   position: absolute;
   width: 98.9%;
-  height: 30rem;
+  height: 35rem;
   top: 100rem;
   border: 10px black solid;
   overflow: hidden;
@@ -477,7 +494,7 @@ main .image_fond4 {
 main .Ouest_fest {
   position: absolute;
   border: aqua 2px;
-  background-color: rebeccapurple;
+  background-color: rgb(205, 27, 152);
   width: 75rem;
   height: 19rem;
   transform: translate(10rem, 106rem);
@@ -491,3 +508,7 @@ main .Ouest_fest .hellfest {
 
 /* Fin Div Ouest */
 
+main p {
+  text-decoration: none;
+  text-decoration-style: none;
+}

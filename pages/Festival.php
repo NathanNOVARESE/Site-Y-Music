@@ -15,7 +15,7 @@
         <nav class="nav">
 
             <div class="logo">
-                <button class="btn_accueil">
+                <button class="btn_accueil1">
                     <a href="page_accueil.php">
                         <img class="logopng" src="../Assets/logo.png" alt="Logo Site Y'music">
                     </a>
@@ -35,10 +35,10 @@
                     </a>
                 </button>
             </div>
-            <div class="ticket">
+            <div class="festival">
                 <button class="btn_accueil">
-                    <a href="page_accueil.php" style="text-decoration: none;">
-                        <p class="ticket2">TICKET</p>
+                    <a href="Festival.php" style="text-decoration: none;">
+                        <p class="ticket2">FESTIVAL</p>
                     </a>
                 </button>
             </div>
@@ -126,13 +126,14 @@
         <!-- North, South, East, West Divisions with Festival Information -->
 
         <div class="Nord_fest">
-            <div class="card soli">
+            <a href="page_pres_festival.php" class="card soli">
                 <img src="../Assets/Solidays.jpg" alt="Solidays" height="200rem" width="240rem">
                 <div class="container">
                     <h4><b>Solidays</b></h4>
                     <p>Festival à Paris du 28 au 30 Juin 2024</p>
                 </div>
-            </div>
+            </a>
+
 
             <div class="card close">
                 <img src="../Assets/closermusic.jpg" alt="Closer Music" height="200rem" width="240rem">

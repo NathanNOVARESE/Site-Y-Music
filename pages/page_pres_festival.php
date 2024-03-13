@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Assets/styles/page_accueil.css">
+    <link rel="stylesheet" href="../Assets/styles/page_pres_festival.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="../includes/page_accueil.js" defer></script>
 
@@ -75,48 +76,33 @@
     </header>
 
     <main>
+      <div class="style">
+        <h1>Style de musique</h1>
+      </div>
+
+      <div class="artist">
+        <h1>Artist présent</h1>
+      </div>
+
+      <div class="tchat">
+        <h1>Tchat</h1>
+      </div>
+
+      <div class="nom_festi">
+        <h1 class="nom_festi_text">Nom Festival</h1>
+      </div>
+
+      <div class="carte_festi">
+        <img src="../Assets/Carte_festival/Carte Solidays.png" class="carte_festi_placement" alt="Carte Festival">
+      </div>
+
+      <div class="lien_billet">
+        <a class="lien_billet_text" href="https://openclassrooms.com/fr/">→ Lien vers la billeterie</a>
+      </div>
 
 
-        <div class="presentation">
-            <p class="presentation_ecriture"> <strong>Y'Music, qu'est-ce que c'est ?</strong> Y'Music est une plateforme de rencontre permettant aux utilisateurs de participer à des concerts hors du commun tout en faisant de belles rencontres ! </p>
-        </div>
-                    <div class="card">
-                        <div class="content-card">
-                            <div class="festi_pic1">
-                                <img class="pic1" src="../Assets/image_accueil2.jpg">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card2">
-                        <div class="content-card">
-                            <div class="festi_pic2">
-                                <img class="pic2" src="../Assets/image_accueil3.jpg">
-                            </div>
-                        </div>
-                    </div>
-
-       </div>
-
-       <div class="feed">
-            <div class="image_feed">
-                <img class="image_feed2" src="../Assets/image_accueil1.jpg" alt="image feed">
-            </div>
-            <div class="like"></div>
-            <div class="comment"></div>
-            <div class="share"></div>
-
-            <div class="comment2">
-                <h1 class="comment_title">Commentaires</h1>
-            </div>
-
-
-
-            <div class="vide"></div>
-       </div>
 
 
     </main>
 </body>
-
 </html>
