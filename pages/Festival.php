@@ -12,7 +12,7 @@
 
 <body>
     <header>
-        <!-- Navigation bar -->
+        <!-- Barre de navigation -->
         <nav class="nav">
             <!-- Logo -->
             <div class="logo">
@@ -22,23 +22,23 @@
                     </a>
                 </button>
             </div>
-            <!-- Home link -->
+            <!-- Lien vers la page d'accueil -->
             <div class="Accueil">
                 <button class="btn_accueil">
                     <a href="page_accueil.php" style="text-decoration: none;">
-                        <p class="Accueil2">HOME</p>
+                        <p class="Accueil2">ACCUEIL</p>
                     </a>
                 </button>
             </div>
-            <!-- About link -->
+            <!-- Lien vers la page À propos -->
             <div class="a_propos">
                 <button class="btn_accueil">
                     <a href="page_accueil.php" style="text-decoration: none;">
-                        <p class="a_propos2">ABOUT</p>
+                        <p class="a_propos2">A PROPOS</p>
                     </a>
                 </button>
             </div>
-            <!-- Festival link -->
+            <!-- Lien vers la page Festival -->
             <div class="festival">
                 <button class="btn_accueil">
                     <a href="Festival.php" style="text-decoration: none;">
@@ -46,7 +46,7 @@
                     </a>
                 </button>
             </div>
-            <!-- Contact link -->
+            <!-- Lien vers la page de contact -->
             <div class="contact">
                 <button class="btn_accueil">
                     <a href="contact.php" style="text-decoration: none;">
@@ -55,19 +55,19 @@
                 </button>
             </div>
 
-            <!-- Search bar -->
+            <!-- Barre de recherche -->
             <div class="search-box">
-                <input class="search-txt" type="text" name="" placeholder="Search here...">
+                <input class="search-txt" type="text" name="" placeholder="Rechercher ici...">
                 <a class="search-btn" href="#">
                     <i class="fas fa-search"></i>
                 </a>
             </div>
-            <!-- Additional navigation links -->
+            <!-- Liens de navigation supplémentaires -->
             <ul class="nav-list">
-                <li class="item"><a href="setting_user.php">Setting</a></li>
+                <li class="item"><a href="setting_user.php">Paramètres</a></li>
                 <li class="item"><a href="Festival.php">Festival</a></li>
             </ul>
-            <!-- Hamburger menu button -->
+            <!-- Bouton de menu hamburger -->
             <button class="btn" id="btn">
                 <svg fill="#8975D1" class="hamburger" viewBox="0 0 100 100" width="45">
                     <rect class="row top" width="80" height="10" x="10" y="30" rx="5"></rect>
@@ -77,42 +77,41 @@
             </button>
         </nav>
 
-        <!-- Grey bar -->
+        <!-- Barre grise -->
         <div class=greybar></div>
 
-        <!-- Image bar -->
+        <!-- Barre d'image -->
         <img class="barre" src="../Assets/barre.png" alt="barre">
     </header>
 
     <main>
-        <!-- Festival heading -->
+        <!-- En-tête Festival -->
         <div class="Festival">
             <h1>Festival</h1>
         </div>
-
-        <!-- Post section -->
+        <!-- Section Post -->
         <div class="post">
             <h1>Post</h1>
         </div>
 
-        <!-- Divisions for North, South, East, West -->
+        <!-- Divisions pour le Nord, le Sud, l'Est, l'Ouest -->
         <div class="Nord">
-            <h2>North</h2>
+            <h2>Nord</h2>
         </div>
         <div class="Sud">
-            <h2>South</h2>
+            <h2>Sud</h2>
         </div>
         <div class="Est">
-            <h2>East</h2>
+            <h2>Est</h2>
         </div>
         <div class="Ouest">
-            <h2>West</h2>
+            <h2>Ouest</h2>
         </div>
         <div class="scroll">
             <h2></h2>
         </div>
 
-        <!-- Blurred background images -->
+        <!-- Images de fond floues -->
         <div class="image_fond1">
             <img src="../Assets/festival1_fond.jpg" alt="image fond1" width="100%" height="100%">
         </div>
@@ -126,13 +125,13 @@
             <img src="../Assets/image_fond4.jpg" alt="image fond2" width="100%" height="100%">
         </div>
 
-        <!-- North, South, East, West Divisions with Festival Information -->
+        <!-- Divisions Nord, Sud, Est, Ouest avec les informations sur le festival -->
         <div class="Nord_fest">
             <a href="page_pres_festival.php" class="card soli">
                 <img src="../Assets/Solidays.jpg" alt="Solidays" height="200rem" width="240rem">
                 <div class="container">
                     <h4><b>Solidays</b></h4>
-                    <p>Festival in Paris from June 28 to 30, 2024</p>
+                    <p>Festival à Paris du 28 au 30 Juin 2024</p>
                 </div>
             </a>
 
@@ -140,7 +139,7 @@
                 <img src="../Assets/closermusic.jpg" alt="Closer Music" height="200rem" width="240rem">
                 <div class="container">
                     <h4><b>Closer Music</b></h4>
-                    <p>Festival in Paris from January 19 to 21, 2024</p>
+                    <p>Festival à Paris du 19 au 21 Janvier 2024</p>
                 </div>
             </a>
         </div>
