@@ -1,38 +1,3 @@
-<?php
-
-require('securityAction.php');
-
-// Vérifiez si l'utilisateur est connecté
-if(isset($_SESSION['username'])) {
-    // Connectez-vous à votre base de données et récupérez les informations de l'utilisateur
-    $servername = "localhost";
-    $username = "root";
-    $password = "BbREe5uP@oZNc@@Z";
-    $dbname = "utilisateur";
-
-    try {
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        // Récupérez les informations de l'utilisateur à partir de la base de données en utilisant son nom d'utilisateur
-        $query_user = $conn->prepare("SELECT * FROM users WHERE username = :username");
-        $query_user->bindParam(':username', $_SESSION["username"]);
-        $query_user->execute();
-        $row_user = $query_user->fetch(PDO::FETCH_ASSOC);
-
-        // Vérifiez si l'utilisateur est également un administrateur
-        $query_admin = $conn->prepare("SELECT * FROM administrateurs WHERE utilisateur_id = :utilisateur_id");
-        $query_admin->bindParam(':utilisateur_id', $row_user['id']);
-        $query_admin->execute();
-        $row_admin = $query_admin->fetch(PDO::FETCH_ASSOC);
-
-    } catch(PDOException $e) {
-        echo "Erreur : " . $e->getMessage();
-    }
-} else {
-    echo "Vous devez être connecté pour accéder à cette page.";
-}
-?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -52,7 +17,7 @@ if(isset($_SESSION['username'])) {
         <nav class="nav">
 
             <div class="logo">
-                <button class="btn_accueil">
+                <button class="btn_accueil1">
                     <a href="page_accueil.php">
                         <img class="logopng" src="../Assets/logo.png" alt="Logo Site Y'music">
                     </a>
@@ -72,16 +37,16 @@ if(isset($_SESSION['username'])) {
                     </a>
                 </button>
             </div>
-            <div class="ticket">
+            <div class="festival">
                 <button class="btn_accueil">
-                    <a href="page_accueil.php" style="text-decoration: none;">
-                        <p class="ticket2">TICKET</p>
+                    <a href="Festival.php" style="text-decoration: none;">
+                        <p class="ticket2">FESTIVAL</p>
                     </a>
                 </button>
             </div>
             <div class="contact">
                 <button class="btn_accueil">
-                    <a href="page_accueil.php" style="text-decoration: none;">
+                    <a href="contact.php" style="text-decoration: none;">
                         <p class="contact2">CONTACT</p>
                     </a>
                 </button>
