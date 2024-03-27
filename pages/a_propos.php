@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Assets/styles/page_pres_festival.css">
+    <link rel="stylesheet" href="../Assets/styles/a_propos.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="../includes/page_accueil.js" defer></script>
 
@@ -61,6 +60,7 @@
             <ul class="nav-list">
                 <li class="item"><a href="setting_user.php">Setting</a></li>
                 <li class="item"><a href="Festival.php">Festival</a></li>
+                <li class="item"><a href="log_out.php">Log out</a></li>
             </ul>
             <button class="btn" id="btn">
                 <svg fill="#8975D1" class="hamburger" viewBox="0 0 100 100" width="45">
@@ -76,45 +76,27 @@
     </header>
 
     <main>
-      <div class="style">
-        <h1>Style de musique</h1>
-      </div>
+        <div class="pres">
+            <h1 class="titre">
+                Présentation
+            </h1>
+            <h2 class="st1"><strong>À propos de Y'Music</strong></h2>
+            <p class="txt1">Bienvenue sur Y'Music, votre destination en ligne pour découvrir les festivals et rencontrer et disucter avec des passionnés de musique dans toutes la France. Fondé par CHOUIAH Naïs, DENIS Jade, EL HASSAIN Madiane, FACELLO Lola, HAMDAOUI Mayssa, MARECHAL Clément et NOVARESE Nathan.</p>
+            <div class="trt1"></div>
 
-      <div class="artiste">
-        <h1>Artiste présent</h1>
-      </div>
+            <h2 class="st1">Notre Mission</h2>
+            <p class="txt1">Chez Y'Music, notre mission est de connecter les amateurs de musique avec les festivals qui leur correspondent, tout en facilitant les rencontres et les échanges entre passionnés. Que vous soyez à la recherche d'un festival de jazz intime, d'une expérience électro palpitante ou d'une immersion dans la diversité des musiques du monde, notre plateforme est votre guide ultime.</p>
+            <div class="trt1"></div>
 
-      <div class="tchat">
-        <h1>Tchat</h1>
-      </div>
+        </div>
 
-      <div class="nom_festi">
-        <h1 class="nom_festi_text">Nom Festival</h1>
-      </div>
+        <div class="orga_div">
+            <img class="orga" src="../Assets/organigramme.png" alt="organigramme">
+        </div>
 
-      <div class="carte_festi" id="map">
-      </div>
-
-      <div class="lien_billet">
-        <a class="lien_billet_text" href="https://openclassrooms.com/fr/">→ Lien vers la billeterie</a>
-      </div>
-
-      <div class="imgSlider body2"></div>
-
-
-
-
-
+ 
+    
     </main>
-    <script>
-        (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
-            key: "AIzaSyDHdkjvSTPOEOZ7aR4tFBwrZQ3PZ9fbM70",
-            v: "weekly",
-            // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
-            // Add other bootstrap parameters as needed, using camel case.
-        });
-    </script>
 
-    <script src="../includes/page_pres_festival.js"></script>
 </body>
 </html>

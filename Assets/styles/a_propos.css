@@ -4,7 +4,7 @@
   }
   
   body {
-    overflow-y: auto;
+    overflow-y: hidden;
     overflow-x: hidden;
   }
   
@@ -125,12 +125,11 @@
     border: transparent;
     background: none;
   }
-
   header .btn_accueil1{
     border: transparent;
     background: none;
   }
-
+  
   header .btn_accueil::before{
     content: '';
     position: absolute;
@@ -142,11 +141,10 @@
     transition: all .5s;
     border-radius: 0.5rem;
   }
-
+  
   header .btn_accueil:hover::before{
     width: 100%;
   }
-
   
   /* Search Bar*/
   header .nav .search-box{
@@ -226,21 +224,21 @@
     border: 8px solid white;
     right: 21rem;
   }
-
+  
   header .contact2{
     font-size: 1.8rem;
     color: rgb(0, 0, 0);
     font-family: 'Times New Roman', Times, serif;
   }
   
-header .festival{
-  position: absolute;
-  width: 8.3rem;
-  height: 2rem;
-  border: 8px solid white;
-  right: 31rem;
-}
-
+  header .festival{
+    position: absolute;
+    width: 8.3rem;
+    height: 2rem;
+    border: 8px solid white;
+    right: 31rem;
+  }
+  
   header .ticket2{
     font-size: 1.8rem;
     color: rgb(0, 0, 0);
@@ -254,7 +252,7 @@ header .festival{
     border: 8px solid white;
     right: 40rem;
   }
-
+  
   
   header .a_propos2{
     font-size: 1.8rem;
@@ -263,7 +261,7 @@ header .festival{
   }
   
   header .greybar{
-    width: 100%;
+    width: 94rem;
     height: 0.1rem;
     background-color: gray;
     margin-top: 0.5rem;
@@ -272,129 +270,50 @@ header .festival{
   header .barre{
     margin-top: 0.2rem;
     height: 1rem;
-    width: 100%;
+    width: 94rem;
   }
   
   /* Fin header */
 
-  /* Début main */
-
-main .style {
+  .pres {
     position: absolute;
     margin-top: 1.5rem;
     margin-left: 1.5rem;
-    height: 10rem;
-    width: 25rem;
+    height: 32rem;
+    width: 30rem;
     background-color: rgb(212, 212, 212);
     box-shadow: 10px 10px 5px rgb(137, 137, 137);
-}
+    padding: 10px;
+  }
 
-main .artiste{
-    position: absolute;
-    margin-top: 13.5rem;
-    margin-left: 1.5rem;
-    height: 10rem;
-    width: 25rem;
-    background-color: rgb(212, 212, 212);
-    box-shadow: 10px 10px 5px rgb(137, 137, 137);;
-}
-
-main .tchat{
-    position: absolute;
-    margin-top: 25.5rem;
-    margin-left: 1.5rem;
-    height: 10rem;
-    width: 58rem;
-    background-color: rgb(212, 212, 212);
-    box-shadow: 10px 10px 5px rgb(137, 137, 137);;
-}
-
-main .nom_festi{
-    position: absolute;
-    margin-top: 0.5rem;
-    right: 1.5rem;
-    height: 3rem;
-    width: 30rem;
-    background-color: rgb(212, 212, 212);
-    box-shadow: 10px 10px 5px rgb(137, 137, 137);;
-}
-
-main .nom_festi_text {
-    position: relative;
+  .titre {
     text-align: center;
-    top: 0.5rem;
-}
+  }
+  .st1 {
+    margin-top: 1rem;
+  }
+  .txt1 {
+    margin-top: 1rem;
+  }
+  .trt1{
+    height: 0.2rem;
+    width: 26.7rem;
+    background-color: white;
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+  }
 
-main .carte_festi{
+  .orga_div{
     position: absolute;
-    margin-top: 5.5rem;
+    margin-top: 1.5rem;
     right: 1.5rem;
-    height: 17rem;
+    height: 32rem;
     width: 30rem;
     background-color: rgb(212, 212, 212);
-    box-shadow: 10px 10px 5px rgb(137, 137, 137);;
-}
-
-main .carte_festi_placement {
+    box-shadow: -10px 10px 5px rgb(137, 137, 137);
+    padding: 10px;
+  }
+  .orga {
     width: 100%;
     height: 100%;
-}
-
-main .lien_billet{
-    position: absolute;
-    margin-top: 24.5rem;
-    right: 1.5rem;
-    height: 3rem;
-    width: 30rem;
-    background-color: rgb(212, 212, 212);
-    box-shadow: 10px 10px 5px rgb(137, 137, 137);
-}
-
-main .lien_billet_text{
-    position: absolute;
-    font-size: 25px;
-    text-decoration: none;
-    top: 0.6rem;
-}
-
-main h1 {
-    font-size: 25px;
-}
-
-main .body2{
-  margin-left: 33.5rem;
-  margin-top: 1.5rem;
-  position: absolute;
-  background-color: gray;
-  display: grid;
-  place-items: center;
-}
-
-main .imgSlider {
-  position: absolute;
-  width: 20rem;
-  height: 23rem;
-  background-size: 100% 100%;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  animation: changeImage 15s linear infinite;
-}
-
-@keyframes changeImage {
-  0% {
-    background-image: url(../quokka.jpg);
-  }  
-  25% {
-    background-image: url(../quokka2.jpg);
-  }  
-  50% {
-    background-image: url(../Quokka-cover-scaled.jpg);
-  }  
-  75% {
-    background-image: url(../electrobeachfest.jpg);
-  }  
-  100% {
-    background-image: url(../hellfest.jpg);
-  }  
-}
-
-  /* Fin Main */
+  }

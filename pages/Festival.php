@@ -33,7 +33,7 @@
             <!-- Lien vers la page À propos -->
             <div class="a_propos">
                 <button class="btn_accueil">
-                    <a href="page_accueil.php" style="text-decoration: none;">
+                    <a href="a_propos.php" style="text-decoration: none;">
                         <p class="a_propos2">A PROPOS</p>
                     </a>
                 </button>
