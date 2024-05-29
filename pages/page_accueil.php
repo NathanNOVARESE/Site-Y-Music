@@ -136,58 +136,83 @@ if(isset($_SESSION['username'])) {
        </div>
 
        <div class="feed">
-            <?php
-                if ($row_admin) {
-                    echo '<div class="create-post">
-                            <button id="show_post">Créer un post</button>
-                                <div class="post"  id="post" style ="display: none;">
-                                    <form action="creation_post.php" method="POST" enctype="multipart/form-data">
-                                        <div class="form-group">
-                                            <label for="titre">Titre :</label>
-                                            <input type="text" id="titre" name="titre" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="contenu">Contenu :</label>
-                                            <textarea id="contenu" name="contenu" rows="5" required></textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="image">Image :</label>
-                                            <input type="file" id="image" name="image">
-                                        </div>
-                                        <button type="submit">Créer le post</button>
-                                    </form>
-                                </div>
-                            </div>';
-                }
-            ?>
-            <?php
-            // Requête SQL pour sélectionner les posts
-            $query = $conn->query("SELECT * FROM posts ORDER BY date_creation DESC");
-            $posts = $query->fetchAll(PDO::FETCH_ASSOC);
+    <?php
+    // Intégration de la récupération des événements musicaux via l'API Eventful
+    require_once 'EventfulApi.php'; // Inclure la bibliothèque de l'API Eventful
 
-            // Affichage des posts
-            foreach ($posts as $post) {
-                echo "<div class='post'>";
-                echo '<div class="image_feed">
-                        <img class="image_feed2" src="">
-                     </div>';
-                if ($post && isset($post['image'])) {
-                    $imageData = $post['image'];
-                    echo '<img src="data:image/jpeg;base64,' . $imageData . '" class="image_feed">';
-                }
-                echo "<h2>" . $post['titre'] . "</h2>"; // Afficher le titre du post
-                echo "<p>" . $post['contenu'] . "</p>"; // Afficher le contenu du post
-                echo '<div class="like"></div>';
-                echo '<div class="comment"></div>';
-                echo '<div class="share"></div>';
-                echo '<div class="billet"></div>';
-                echo '<div class="comment2">
-                        <h1 class="comment_title">Commentaires</h1>
-                    </div>';
-                echo "</div>";
-            }
-            ?>
-       </div>
+    // Initialiser l'API Eventful avec votre clé API
+    $api = new EventfulApi('LMBlKR13SiBWxFjGgHPG8jm_kNMBAKKV6yWBYBQGdgyJkxME2SSPkg');
+
+    // Définir les paramètres de la recherche pour les événements musicaux
+    $params = array(
+        'category' => 'music',
+        'location' => 'FRANCE', // Spécifiez votre emplacement
+        'date' => 'Today', // Vous pouvez spécifier la date
+        'image_sizes' => 'large', // Demander des images en taille grande
+        'page_size' => 5 // Limiter le nombre de résultats
+    );
+
+    // Appeler l'API Eventful pour rechercher les événements
+    $response = $api->call('/events/search', $params);
+
+    // Vérifier si la réponse est réussie
+    if ($response['success']) {
+        $events = $response['body']->events->event;
+
+        // Boucler à travers chaque événement et l'afficher
+        foreach ($events as $event) {
+            $title = $event->title;
+            $description = $event->description;
+            $image_url = $event->image->large->url;
+            $location = $event->venue_name . ', ' . $event->city_name . ', ' . $event->region_abbr;
+            $ticket_url = $event->url;
+
+            // Afficher les détails de l'événement dans un format de post
+            echo '<div class="post">';
+            echo '<h2>' . $title . '</h2>';
+            echo '<p>' . $description . '</p>';
+            echo '<img src="' . $image_url . '" alt="' . $title . '">';
+            echo '<p>' . $location . '</p>';
+            echo '<a href="' . $ticket_url . '">Acheter des billets</a>';
+            echo '<div class="comment"></div>'; // Section de commentaires
+            echo '</div>';
+        }
+    } else {
+        // Afficher un message d'erreur si l'appel à l'API échoue
+        echo 'Error: ' . $response['error'];
+    }
+    ?>
+
+    <?php
+    // Suite du code pour afficher les posts existants
+    // Requête SQL pour sélectionner les posts
+    $query = $conn->query("SELECT * FROM posts ORDER BY date_creation DESC");
+    $posts = $query->fetchAll(PDO::FETCH_ASSOC);
+
+    // Affichage des posts
+    foreach ($posts as $post) {
+        echo "<div class='post'>";
+        echo '<div class="image_feed">
+                <img class="image_feed2" src="">
+             </div>';
+        if ($post && isset($post['image'])) {
+            $imageData = $post['image'];
+            echo '<img src="data:image/jpeg;base64,' . $imageData . '" class="image_feed">';
+        }
+        echo "<h2>" . $post['titre'] . "</h2>"; // Afficher le titre du post
+        echo "<p>" . $post['contenu'] . "</p>"; // Afficher le contenu du post
+        echo '<div class="like"></div>';
+        echo '<div class="comment"></div>';
+        echo '<div class="share"></div>';
+        echo '<div class="billet"></div>';
+        echo '<div class="comment2">
+                <h1 class="comment_title">Commentaires</h1>
+            </div>';
+        echo "</div>";
+    }
+    ?>
+</div>
+
 
 
     </main>

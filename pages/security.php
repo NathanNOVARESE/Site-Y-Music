@@ -74,7 +74,7 @@ try {
         <button class="fas fa-search" id="ellipse"></button>
 
         <!-- Logo -->
-        <img class="logo" src="../Assets/logo.png" />
+        <img class="logo" onclick="location.href='page_accueil.php'; " src="../Assets/logo.png" />
 
         <div class="box">
             <div class="setting">
