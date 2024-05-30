@@ -20,6 +20,10 @@ if (isset($_SESSION['username'])) {
         $query_user->execute();
         $row_user = $query_user->fetch(PDO::FETCH_ASSOC);
 
+        
+        $user_id = $row_user['id'];
+        
+
         // Vérifiez si l'utilisateur est également un administrateur
         $query_admin = $conn->prepare("SELECT * FROM administrateurs WHERE utilisateur_id = :utilisateur_id");
         $query_admin->bindParam(':utilisateur_id', $row_user['id']);
@@ -98,6 +102,8 @@ if (isset($_SESSION['username'])) {
     <link rel="stylesheet" href="../Assets/styles/page_accueil.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="../includes/page_accueil.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../includes/comments_like.js"></script>
     <title>Page d'Accueil</title>
 </head>
 
@@ -185,47 +191,54 @@ if (isset($_SESSION['username'])) {
 
         <div class="feed">
             <?php
-            // Suite du code pour afficher les posts existants
-            // Requête SQL pour sélectionner les posts
             $query = $conn->query("SELECT * FROM posts ORDER BY date_creation DESC");
             $posts = $query->fetchAll(PDO::FETCH_ASSOC);
 
-            // Affichage des posts
             foreach ($posts as $post) {
                 echo "<div class='post'>";
                 if ($post && isset($post['image'])) {
-                    $imageData = $post['image'];
-                    echo '<img src="' . $imageData . '" class="image_feed">';
+                    echo '<img src="' . $post['image'] . '" class="image_feed">';
                 }
                 echo "<div class='post-content'>";
-                echo "<h2>" . $post['titre'] . "</h2>"; // Afficher le titre du post
-                echo "<p>" . $post['contenu'] . "</p>"; // Afficher le contenu du post
+                echo "<h2>" . $post['titre'] . "</h2>";
+                echo "<p>" . $post['contenu'] . "</p>";
                 echo "</div>";
                 echo '<div class="post-actions">';
-                echo '<button class="like">J\'aime</button>';
-                echo '<button class="dislike">Je n\'aime pas</button>';
-                echo '<button class="comment">Commenter</button>';
-                echo '<button class="share">Partager</button>';
+                echo '<button class="like" data-post-id="' . $post['id'] . '">J\'aime</button>';
+                echo '<span class="like-count">' . $post['likes'] . '</span>';
+                echo '<button class="dislike" data-post-id="' . $post['id'] . '">Je n\'aime pas</button>';
+                echo '<span class="dislike-count">' . $post['dislikes'] . '</span>';
                 echo '</div>';
+
+                // Affichage des commentaires
                 echo '<div class="comment-section">';
                 echo '<h3>Commentaires</h3>';
-                // Afficher les commentaires du post
-                // Exemple de structure de commentaire
-                echo '<div class="comment">';
-                echo '<div class="avatar"></div>';
-                echo '<div class="text">';
-                echo '<p>Commentaire exemple...</p>';
-                echo '</div>';
-                echo '</div>';
+
+                $query_comments = $conn->prepare("SELECT c.*, u.username FROM comments c JOIN users u ON c.user_id = u.id WHERE c.post_id = :post_id ORDER BY c.created_at DESC");
+                $query_comments->bindParam(':post_id', $post['id']);
+                $query_comments->execute();
+                $comments = $query_comments->fetchAll(PDO::FETCH_ASSOC);
+
+                foreach ($comments as $comment) {
+                    echo '<div class="comment">';
+                    echo '<div class="avatar"></div>';
+                    echo '<div class="text">';
+                    echo '<p><strong>' . htmlspecialchars($comment['username']) . '</strong>: ' . htmlspecialchars($comment['content']) . '</p>';
+                    echo '</div>';
+                    echo '</div>';
+                }
+
+                // Formulaire d'ajout de commentaire
                 echo '<div class="add-comment">';
-                echo '<input type="text" placeholder="Ajouter un commentaire...">';
-                echo '<button>Poster</button>';
+                echo '<input type="text" class="comment-input" placeholder="Ajouter un commentaire..." data-post-id="' . $post['id'] . '">';
+                echo '<button class="comment-button" data-post-id="' . $post['id'] . '">Poster</button>';
                 echo '</div>';
                 echo '</div>';
+
                 echo "</div>";
             }
             ?>
-</div>
+        </div>
 
     </main>
 </body>
