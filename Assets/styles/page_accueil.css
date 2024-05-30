@@ -666,3 +666,16 @@ body {
 .add-comment button:hover {
   background: #5e49a6;
 }
+
+.avatar {
+  width: 50px; /* Ajustez la taille selon vos besoins */
+  height: 50px; /* Ajustez la taille selon vos besoins */
+  border-radius: 50%; /* Cela rendra l'avatar rond */
+  overflow: hidden; /* Cela masquera toute partie de l'image qui dépasse du cadre rond */
+}
+
+.profile-picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Pour s'assurer que l'image est correctement redimensionnée pour remplir le cadre rond */
+}

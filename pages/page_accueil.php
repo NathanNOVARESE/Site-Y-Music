@@ -204,37 +204,47 @@ if (isset($_SESSION['username'])) {
                 echo "<p>" . $post['contenu'] . "</p>";
                 echo "</div>";
                 echo '<div class="post-actions">';
-                echo '<button class="like" data-post-id="' . $post['id'] . '">J\'aime</button>';
+                echo '<button class="like" data-post-id="' . $post['id'] . '">J\'y vais</button>';
                 echo '<span class="like-count">' . $post['likes'] . '</span>';
-                echo '<button class="dislike" data-post-id="' . $post['id'] . '">Je n\'aime pas</button>';
+                echo '<button class="dislike" data-post-id="' . $post['id'] . '">Je n\'y vais pas</button>';
                 echo '<span class="dislike-count">' . $post['dislikes'] . '</span>';
                 echo '</div>';
-
-                // Affichage des commentaires
-                echo '<div class="comment-section">';
+                
+                // Section des commentaires
+                echo '<div class="comment-section" data-post-id="' . $post['id'] . '">';
                 echo '<h3>Commentaires</h3>';
-
-                $query_comments = $conn->prepare("SELECT c.*, u.username FROM comments c JOIN users u ON c.user_id = u.id WHERE c.post_id = :post_id ORDER BY c.created_at DESC");
+                echo '<div class="comments-container">';
+                // Récupération des commentaires de ce post
+                $query_comments = $conn->prepare("SELECT comments.content, users.username, comments.date FROM comments JOIN users ON comments.user_id = users.id WHERE comments.post_id = :post_id ORDER BY comments.date ASC");
                 $query_comments->bindParam(':post_id', $post['id']);
                 $query_comments->execute();
                 $comments = $query_comments->fetchAll(PDO::FETCH_ASSOC);
 
                 foreach ($comments as $comment) {
                     echo '<div class="comment">';
-                    echo '<div class="avatar"></div>';
+                    echo '<div class="avatar">';
+                    if ($row_user && isset($row_user['profile_picture'])) {
+                        // Si l'utilisateur a une photo de profil enregistrée, affichez-la
+                        $imageData = $row_user['profile_picture'];
+                        echo '<img src="data:image/jpeg;base64,' . $imageData . '" class="profile-picture">';
+                    } else {
+                        // Si l'utilisateur n'a pas de photo de profil, utilisez une image par défaut
+                        echo '<img src="../Assets/profile.png" class="profile-picture">';
+                    }
+                    echo '</div>';
                     echo '<div class="text">';
-                    echo '<p><strong>' . htmlspecialchars($comment['username']) . '</strong>: ' . htmlspecialchars($comment['content']) . '</p>';
+                    echo '<p><strong>' . htmlspecialchars($comment['username']) . '</strong> ' . htmlspecialchars($comment['content']) . '</p>';
+                    echo '<small>' . $comment['date'] . '</small>';
                     echo '</div>';
                     echo '</div>';
                 }
+                echo '</div>'; // End of comments container
 
-                // Formulaire d'ajout de commentaire
                 echo '<div class="add-comment">';
-                echo '<input type="text" class="comment-input" placeholder="Ajouter un commentaire..." data-post-id="' . $post['id'] . '">';
-                echo '<button class="comment-button" data-post-id="' . $post['id'] . '">Poster</button>';
+                echo '<input type="text" class="comment-input" data-post-id="' . $post['id'] . '" placeholder="Ajouter un commentaire...">';
+                echo '<button class="post-comment" data-post-id="' . $post['id'] . '">Poster</button>';
                 echo '</div>';
-                echo '</div>';
-
+                echo '</div>'; // Fin de la section des commentaires
                 echo "</div>";
             }
             ?>
